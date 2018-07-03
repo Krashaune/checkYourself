@@ -148,6 +148,7 @@
                                         <size key="customSize" width="60" height="60"/>
                                         <connections>
                                             <outlet property="myEmotion" destination="ATc-b9-yBA" id="tcK-6i-efV"/>
+                                            <segue destination="9g5-Tp-LrT" kind="show" id="pGQ-gI-XZS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -164,6 +165,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yL5-gd-bgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1503.2" y="31.934032983508249"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KvB-Ks-UVa">
+            <objects>
+                <viewController id="9g5-Tp-LrT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="abR-ge-Rph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6wo-rf-1ZR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HO7-y0-UXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="30"/>
         </scene>
     </scenes>
     <resources>

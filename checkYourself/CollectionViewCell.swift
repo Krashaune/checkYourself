@@ -1,5 +1,5 @@
 //
-//  CheckinCollectionViewCell.swift
+//  CollectionViewCell.swift
 //  checkYourself
 //
 //  Created by kiera thomasson on 7/3/18.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class CheckinCollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var emotion: UILabel!
-    
-    
+    @IBOutlet weak var myEmotion: UILabel!
 }

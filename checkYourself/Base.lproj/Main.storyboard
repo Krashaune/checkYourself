@@ -120,7 +120,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PBy-dd-eJL">
                                 <rect key="frame" x="16" y="94" width="359" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.24711652070000001" blue="0.186553254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c44-pL-M4w">
                                     <size key="itemSize" width="79" height="73"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -144,7 +144,6 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.24711652071480494" blue="0.18655325400966594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="60" height="60"/>
                                         <connections>
                                             <outlet property="myEmotion" destination="ATc-b9-yBA" id="tcK-6i-efV"/>

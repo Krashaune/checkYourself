@@ -1,14 +1,14 @@
 //
-//  ViewControllerOptionalRelief.swift
+//  ViewControllerWellness.swift
 //  checkYourself
 //
-//  Created by kiera thomasson on 7/3/18.
+//  Created by kiera thomasson on 7/5/18.
 //  Copyright © 2018 kiera thomasson. All rights reserved.
 //
 
 import UIKit
 
-class ViewControllerOptionalRelief: UIViewController {
+class ViewControllerWellness: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,6 @@ class ViewControllerOptionalRelief: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var checkedEmotion: UILabel!
-    
-    override func viewDidAppear(_ animated: Bool)
-    {
-        checkedEmotion.text = "You checked in as feeling..." 
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

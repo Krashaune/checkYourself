@@ -148,7 +148,7 @@
                                         <size key="customSize" width="60" height="60"/>
                                         <connections>
                                             <outlet property="myEmotion" destination="ATc-b9-yBA" id="tcK-6i-efV"/>
-                                            <segue destination="9g5-Tp-LrT" kind="show" id="pGQ-gI-XZS"/>
+                                            <segue destination="9g5-Tp-LrT" kind="show" identifier="segueRelief" id="pGQ-gI-XZS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="1503.2" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Optional Relief-->
         <scene sceneID="KvB-Ks-UVa">
             <objects>
-                <viewController id="9g5-Tp-LrT" sceneMemberID="viewController">
+                <viewController id="9g5-Tp-LrT" customClass="ViewControllerOptionalRelief" customModule="checkYourself" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abR-ge-Rph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

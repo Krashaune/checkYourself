@@ -1,36 +1,21 @@
 //
-//  ViewControllerOptionalRelief.swift
+//  ViewControllerSulk.swift
 //  checkYourself
 //
-//  Created by kiera thomasson on 7/3/18.
+//  Created by kiera thomasson on 7/5/18.
 //  Copyright © 2018 kiera thomasson. All rights reserved.
 //
 
 import UIKit
 
-class ViewControllerOptionalRelief: UIViewController {
+class ViewControllerSulk: UIViewController {
 
-    @IBOutlet weak var checkedEmotion: UILabel!
-
-    @IBOutlet weak var btnRelief: UIButton!
-    
-    @IBOutlet weak var btnSulk: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(_ animated: Bool)
-    {
-        checkedEmotion.text = "You checked in as feeling..."
-        btnRelief.layer.cornerRadius = 10
-        btnSulk.layer.cornerRadius = 10
-    }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

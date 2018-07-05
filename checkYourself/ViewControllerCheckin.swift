@@ -16,30 +16,70 @@ let greenEmotions = ["Blessed", "At Ease", "Content", "Fulfilled", "Humble", "Se
 
 let blueEmotions = ["Disgusted", "Disappointed", "Glum", "Ashamed", "Mortified", "Alienated", "Mopey", "Apathetic", "Embarrassed", "Excluded", "Timid", "Drained", "Alone", "Down", "Bored", "Tired"]
 
+let emotions = ["Enraged","Furious", "Fustrated", "Shocked", "Livid", "Frightened", "Nervous", "Restless", "Fuming", "Apprehensive", "Worried", "Annoyed", "Repulsed", "Troubled", "Uneasy", "Peeved", "Surprised", "Upbeat", "Motivated", "Ecstatic", "Hyper", "Cheerful", "Inspired", "Elated", "Energized", "Lively", "Optimistic", "Thrilled", "Pleasant", "Joyful", "Proud", "Blissful", "Blessed", "At Ease", "Content", "Fulfilled", "Humble", "Secure", "Chill", "Grateful", "Calm", "Satisfied", "Relaxed", "Carefree", "Relieved", "Restful", "Tranquil", "Serene", "Disgusted", "Disappointed", "Glum", "Ashamed", "Mortified", "Alienated", "Mopey", "Apathetic", "Embarrassed", "Excluded", "Timid", "Drained", "Alone", "Down", "Bored", "Tired"]
+
 class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    var allEmotionsCount = redEmotions.count + yellowEmotions.count + greenEmotions.count + blueEmotions.count
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return redEmotions.count
+        
+        return emotions.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+//    var sections = ["red", "yellow", "blue", "green"]
+//
+//    var combined : NSMutableArray!
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//        var reuseable : UICollectionReusableView? = nil
+//        if(kind == UICollectionElementKindSectionHeader)
+//        {
+//            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "reuseable", for: indexPath) as! CollectionReusableView
+//
+//            view.headerText.text = sections[indexPath.section]
+//
+//            reuseable = view
+//            return reuseable!
+//            
+//        }
+//        return reuseable!
+//    }
+//
+
+    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return sections.count
+//    }
+    
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+//    {
+//        return (combined.object(at: section) as! NSArray).count
+//
+//    }
+//
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        cell.myEmotion.text = redEmotions[indexPath.item]
+        cell.myEmotion.text = emotions[indexPath.item]
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
         print (indexPath.item)
     }
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        combined.addObjects(from: [redEmotions,yellowEmotions,blueEmotions,greenEmotions])
 
         // Do any additional setup after loading the view.
     }

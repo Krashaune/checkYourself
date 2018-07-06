@@ -73,6 +73,7 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         print (indexPath.item)
+        
     }
    
 

@@ -12,6 +12,7 @@
 		B309AD2620EE9C1A00D11A99 /* ViewControllerWellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AD2520EE9C1A00D11A99 /* ViewControllerWellness.swift */; };
 		B309AD2820EEB0E700D11A99 /* ViewControllerSulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AD2720EEB0E700D11A99 /* ViewControllerSulk.swift */; };
 		B31F364620F01A2C0085A7F5 /* .gitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F364520F01A2C0085A7F5 /* .gitignore.swift */; };
+		B358B94820F3D2AA0081AC55 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B358B94720F3D2AA0081AC55 /* ViewControllerLogin.swift */; };
 		B38C895B20EAD2820041B715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C895A20EAD2820041B715 /* AppDelegate.swift */; };
 		B38C895D20EAD2820041B715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C895C20EAD2820041B715 /* ViewController.swift */; };
 		B38C896020EAD2820041B715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38C895E20EAD2820041B715 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		B309AD2520EE9C1A00D11A99 /* ViewControllerWellness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWellness.swift; sourceTree = "<group>"; };
 		B309AD2720EEB0E700D11A99 /* ViewControllerSulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSulk.swift; sourceTree = "<group>"; };
 		B31F364520F01A2C0085A7F5 /* .gitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore.swift; sourceTree = "<group>"; };
+		B358B94720F3D2AA0081AC55 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		B38C895720EAD2820041B715 /* checkYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = checkYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38C895A20EAD2820041B715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B38C895C20EAD2820041B715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				B38C895E20EAD2820041B715 /* Main.storyboard */,
 				B38C895A20EAD2820041B715 /* AppDelegate.swift */,
 				B38C895C20EAD2820041B715 /* ViewController.swift */,
+				B358B94720F3D2AA0081AC55 /* ViewControllerLogin.swift */,
 				B38C896C20EAD8370041B715 /* HomeViewController.swift */,
 				B38C897620EC2B320041B715 /* CollectionViewCell.swift */,
 				B38C897820EC2D7B0041B715 /* ViewControllerCheckin.swift */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B358B94820F3D2AA0081AC55 /* ViewControllerLogin.swift in Sources */,
 				B38C895D20EAD2820041B715 /* ViewController.swift in Sources */,
 				B309AD2820EEB0E700D11A99 /* ViewControllerSulk.swift in Sources */,
 				B309AD2420EC45EE00D11A99 /* ViewControllerOptionalRelief.swift in Sources */,

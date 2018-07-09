@@ -11,19 +11,35 @@ import SpotifyLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+//    Below is data that is not accessible from the info.plist
+    var clientID = ""
+    var clientSecret = ""
     
+    func setDictionary() {
+        guard let infoPlist = Bundle.main.infoDictionary
+            else {
+               let status = "could not get plist"
+                return
+        }
+        
     
-    var clientID = Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID")
+        clientID += infoPlist["CLIENT_ID"] as! String
+        clientSecret += infoPlist["CLIENT_SECRET"] as! String
+        
+    }
     
-    var clientSecret = Bundle.main.object(forInfoDictionaryKey: "CLIENT_SECRET")
-    
-    var redirectURL = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLSchemes")
-    
+    var redirectURL = URL(string: "check-yourself-login://callback")
     var window: UIWindow?
     
-    func applicationDidFinishLaunching(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool
     {
-        SpotifyLogin.shared.configure(clientID: clientID as! String, clientSecret: clientSecret as! String, redirectURL: redirectURL as! URL)
+        print("about to configure spotify")
+        
+        setDictionary()
+        
+        SpotifyLogin.shared.configure(clientID: clientID , clientSecret: clientSecret , redirectURL: redirectURL!)
+        print ("configured Spotify")
         
         return true
     }

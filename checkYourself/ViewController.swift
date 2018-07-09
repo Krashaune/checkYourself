@@ -11,6 +11,9 @@ import SpotifyLogin
 
 
 var username = SpotifyLogin.shared.username
+var clientID = Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID")
+var clientSecret = Bundle.main.object(forInfoDictionaryKey: "CLIENT_SECRET")
+var redirectURL = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLSchemes")
 
 
 class ViewController: UIViewController {
@@ -19,45 +22,24 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         SpotifyLogin.shared.getAccessToken { (token, error) in
             if error != nil, token == nil {
-//                self.showLoginFlow(self.spotifyLogin!)
+                self.showLoginFlow(spotifyLogin!)
             }
         }
     }
     
-    @IBAction func showLoginFlow(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "segueLogin", sender: self)
+    func showLoginFlow(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueLogin", sender: spotifyLogin)
     }
     
-    var spotifyLogin: UIButton?
-    
-//    SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = SpotifyLoginButton(viewController: self,
-                                        scopes: [.streaming,
-                                                 .userLibraryRead])
-        
-        self.view.addSubview(button)
-        self.spotifyLogin = button
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65).isActive = true
-        
-    
+       
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-//        spotifyLogin?.center = self.view.center
-        
-    }
 
-    @objc func loginSuccessful() {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

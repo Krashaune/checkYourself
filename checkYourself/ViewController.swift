@@ -10,23 +10,27 @@ import UIKit
 import SpotifyLogin
 
 
-var username = ""
+var username = SpotifyLogin.shared.username
 
 
 class ViewController: UIViewController {
-
-   
-    @IBOutlet weak var loginOutlet: UITextField!
-
-    @IBAction func login(_ sender: UIButton) {
-        if (loginOutlet.text != "") {
-           username = loginOutlet.text!
-            performSegue(withIdentifier: "segueLogin", sender: self)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SpotifyLogin.shared.getAccessToken { (token, error) in
+            if error != nil, token == nil {
+//                self.showLoginFlow(self.spotifyLogin!)
+            }
         }
-
     }
     
-    @IBOutlet weak var spotifyLogin: UIButton?
+    @IBAction func showLoginFlow(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueLogin", sender: self)
+    }
+    
+    var spotifyLogin: UIButton?
+    
+//    SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +40,30 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button)
         self.spotifyLogin = button
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65).isActive = true
+        
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 //        spotifyLogin?.center = self.view.center
+        
     }
 
+    @objc func loginSuccessful() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }

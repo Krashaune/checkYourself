@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        name.text = "Hello " + username + " !"
+        name.text = "Hello " + username! + " !"
     }
 
     override func didReceiveMemoryWarning() {

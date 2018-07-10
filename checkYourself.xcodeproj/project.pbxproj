@@ -187,7 +187,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2939C6AFCD7422FDF405D5A8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -382,6 +382,7 @@
 			baseConfigurationReference = 593856841AD0012F986DE459 /* Pods-checkYourself.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C6K894Y3L;
 				INFOPLIST_FILE = checkYourself/Info.plist;
@@ -389,6 +390,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-framework",
+					"\"SpotifyLogin\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PersonalLearning.checkYourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +409,7 @@
 			baseConfigurationReference = 59C4E9D74EF12469B0AC71AB /* Pods-checkYourself.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C6K894Y3L;
 				INFOPLIST_FILE = checkYourself/Info.plist;
@@ -409,6 +417,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SpotifyLogin\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PersonalLearning.checkYourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";

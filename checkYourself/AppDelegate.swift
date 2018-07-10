@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setDictionary() {
         guard let infoPlist = Bundle.main.infoDictionary
             else {
-               let status = "could not get plist"
+                _ = "could not get plist"
                 return
         }
         
@@ -29,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    var redirectURL = URL(string: "check-yourself-login://callback")
+    var redirectURL = URL(string: "check-yourself-login://callback/")
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool
@@ -44,9 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in }
-        return handled
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in }
+//        return handled
+//    }
+    
+    func open(scheme: String) {
+        if let url = URL(string: scheme) {
+            UIApplication.shared.open(url, options: [:], completionHandler: {
+                (success) in
+                print ("Open \(scheme): \(success)")
+            })
+        }
     }
 
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

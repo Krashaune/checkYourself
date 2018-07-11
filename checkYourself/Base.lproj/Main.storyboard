@@ -252,6 +252,9 @@
                                 <state key="normal" title="Uplifting song">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="uplift:" destination="gkx-DL-mgx" eventType="touchUpInside" id="Tou-SG-z0X"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isb-g2-vez">
                                 <rect key="frame" x="117" y="384" width="141" height="82"/>
@@ -260,6 +263,9 @@
                                 <state key="normal" title="Happy song">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="happy:" destination="gkx-DL-mgx" eventType="touchUpInside" id="DzQ-ZQ-Lbs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-2k-7WB">
                                 <rect key="frame" x="117" y="176" width="141" height="82"/>
@@ -269,6 +275,9 @@
                                 <state key="normal" title="Relaxing song">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="1cE-GA-Caz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text talking about choosing relief" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-Xr-Pl2">
                                 <rect key="frame" x="16" y="29" width="343" height="73"/>
@@ -292,6 +301,9 @@
                                 <state key="normal" title="Guided meditation ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="meditate:" destination="gkx-DL-mgx" eventType="touchUpInside" id="le1-7r-zFl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -350,7 +362,7 @@
         <image name="logoImage" width="191" height="247"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BWx-rF-oqc"/>
+        <segue reference="z7B-IM-4RE"/>
         <segue reference="6aD-GM-qyx"/>
     </inferredMetricsTieBreakers>
 </document>

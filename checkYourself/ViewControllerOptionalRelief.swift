@@ -25,7 +25,7 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        checkedEmotion.text = "You checked in as feeling..."
+        checkedEmotion.text = "You checked in as feeling..." 
         btnRelief.layer.cornerRadius = 10
         btnSulk.layer.cornerRadius = 10
     }

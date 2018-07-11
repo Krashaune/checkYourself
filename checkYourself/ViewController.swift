@@ -11,15 +11,12 @@ import SpotifyLogin
 
 
 var username = SpotifyLogin.shared.username
-var clientID = Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID")
-var clientSecret = Bundle.main.object(forInfoDictionaryKey: "CLIENT_SECRET")
-var redirectURL = Bundle.main.object(forInfoDictionaryKey: "CFBundleURLSchemes")
-
 
 class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         SpotifyLogin.shared.getAccessToken { (token, error) in
             if error != nil, token == nil {
                 self.showLoginFlow(spotifyLogin!)
@@ -28,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     func showLoginFlow(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "segueLogin", sender: spotifyLogin)
+        self.performSegue(withIdentifier: "segueLogin", sender: self)
     }
     
     

@@ -25,41 +25,6 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-//    var sections = ["red", "yellow", "blue", "green"]
-//
-//    var combined : NSMutableArray!
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//        var reuseable : UICollectionReusableView? = nil
-//        if(kind == UICollectionElementKindSectionHeader)
-//        {
-//            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "reuseable", for: indexPath) as! CollectionReusableView
-//
-//            view.headerText.text = sections[indexPath.section]
-//
-//            reuseable = view
-//            return reuseable!
-//            
-//        }
-//        return reuseable!
-//    }
-//
-
-    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return sections.count
-//    }
-    
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-//    {
-//        return (combined.object(at: section) as! NSArray).count
-//
-//    }
-//
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         
@@ -67,8 +32,19 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
         
         cell.myEmotion.text = emotions[indexPath.item]
         
+        if redEmotions.contains(cell.myEmotion.text!){
+            cell.backgroundColor = .red
+        } else if yellowEmotions.contains(cell.myEmotion.text!) {
+            cell.backgroundColor = .yellow
+        } else if greenEmotions.contains(cell.myEmotion.text!) {
+            cell.backgroundColor = .green
+        } else if blueEmotions.contains(cell.myEmotion.text!) {
+            cell.backgroundColor = .blue
+        }
+        
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {

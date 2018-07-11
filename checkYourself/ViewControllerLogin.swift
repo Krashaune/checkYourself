@@ -31,15 +31,18 @@ class ViewControllerLogin: UIViewController {
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65).isActive = true
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func login(_sender: UIButton) {
-        SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead])
-        print ("button clicked")
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSuccessful),
+            name: .SpotifyLoginSuccessful,
+            object: nil
+        )
     }
     
     @objc func loginSuccessful() {
-        self.navigationController?.popViewController(animated: true)
+        print("logged in successfully")
+//        self.navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "segueLogin", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

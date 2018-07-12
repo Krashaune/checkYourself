@@ -18,9 +18,14 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         SpotifyLogin.shared.getAccessToken { (token, error) in
+            print(token)
+            print(error)
+            
             if error != nil, token == nil {
                 self.showLoginFlow(spotifyLogin!)
             }
+            
+            
         }
     }
     

@@ -21,7 +21,7 @@ class ViewControllerLogin: UIViewController {
         
         let button = SpotifyLoginButton(viewController: self,
                                         scopes: [.streaming,
-                                                 .userLibraryRead])
+                                                 .userLibraryRead, .playlistReadPrivate])
         
         self.view.addSubview(button)
         spotifyLogin = button

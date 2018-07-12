@@ -8,13 +8,38 @@
 
 import UIKit
 
+struct Playlist: Decodable {
+    let name: String
+    let id: String
+}
+
 class ViewControllerWellness: UIViewController {
 
-//    var baseUrl = URL(string: "https://api.spotify.com/v1")
-//    var getPlaylists = URL(string: users/k33rayt/)
+//    let baseUrl =  "https://api.spotify.com/v1/"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let userPlaylists = "https://api.spotify.com/v1/users/k33rayt/playlists?"
+//        let urlObj = URL(string: userPlaylists)
+//
+//        URLSession.shared.dataTask(with: urlObj!) { _,_,_ in (data, response, error)
+//
+//            do {
+//                var playlists = try JSONDecoder().decode([Playlist].self, from: data)
+//
+//                for playlist in playlists {
+//
+//                    print(Playlist.name)
+//                }
+//            } catch {
+//                print("we got an error")
+//            }
+//
+//        }.resume()
+        
+            
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +51,31 @@ class ViewControllerWellness: UIViewController {
     
 //    classical song -- update to classical playlist
     @IBAction func relax(_ sender: UIButton) {
-        UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/2ZrF3UfwS50CKE8jQQVjWj")! as URL)
+        
+        guard let url = URL(string:"https://api.spotify.com/v1/users/k33rayt/playlists") else {return}
+        
+        
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.setValue("Bearer BQD5TOvhQKIJ5THWPqdC4YxKD8vNamzS5Wekah8NKc4qQCDC_5lBwkZMNCoUE95fkpVWhIRDOfPAS0gpY_HopxstQCA5C-GYdQd7WTXykvLgjxv-JkXyF63D5QGZH024ZpqkAaDUKiYiZqqVf-kVolRYAV4V7akHc2agjg" , forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            
+            if let data = data {
+                print(data)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error   )
+                }
+            }
+        }.resume()
+//        UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/2ZrF3UfwS50CKE8jQQVjWj")! as URL)
         
     }
     

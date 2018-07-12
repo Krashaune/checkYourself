@@ -10,6 +10,9 @@ import UIKit
 
 class ViewControllerWellness: UIViewController {
 
+//    var baseUrl = URL(string: "https://api.spotify.com/v1")
+//    var getPlaylists = URL(string: users/k33rayt/)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

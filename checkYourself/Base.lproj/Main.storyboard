@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="w9X-oK-MTn" kind="show" identifier="segueLogin" id="gGp-l5-7Rs"/>
+                                    <segue destination="Eb5-j7-Wqp" kind="show" identifier="segueLogin" id="gGp-l5-7Rs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,45 +48,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8a-kR-2La">
-                                <rect key="frame" x="16" y="81" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-DX-j5K">
-                                <rect key="frame" x="56" y="440" width="262" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.18520627349999999" green="0.90248694640000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="Check In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSk-Cq-nsd"/>
-                                    <segue destination="cEJ-JD-HIg" kind="show" id="EIR-VW-wBt"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jtX-o3-kY2">
-                                <rect key="frame" x="67" y="187" width="240" height="151"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Welcome to CheckYourself! This app will help you check in with yourself when others tend to forget. Click the check in button to get started</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6pQ-Yj-72A">
+                                <rect key="frame" x="16" y="64" width="82" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFu-kB-nAN">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="30"/>
+                                        <state key="normal" title="Check In"/>
+                                        <connections>
+                                            <segue destination="cEJ-JD-HIg" kind="show" identifier="QuickCheckin" id="xhD-tz-x93"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-pY-QQ3">
+                                        <rect key="frame" x="0.0" y="30" width="82" height="30"/>
+                                        <state key="normal" title="Quick Relief"/>
+                                        <connections>
+                                            <segue destination="gkx-DL-mgx" kind="show" identifier="QuickWellness" id="RB2-3l-05q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYq-7L-ck2">
+                                        <rect key="frame" x="0.0" y="60" width="82" height="30"/>
+                                        <state key="normal" title="Report"/>
+                                        <connections>
+                                            <segue destination="YPs-0b-QPC" kind="show" identifier="segueReport" id="qLX-Fh-PVt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-M8-255">
+                                        <rect key="frame" x="0.0" y="90" width="82" height="30"/>
+                                        <state key="normal" title="Log Out"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-bD-LoW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzF-4x-9cj">
+                                        <rect key="frame" x="16" y="132" width="343" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="sOy-r7-2VC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-za-5Hf">
+                                        <rect key="frame" x="78" y="226" width="240" height="151"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Welcome to CheckYourself! This app will help you check in with yourself when others tend to forget. Click the check in button to get started</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-DX-j5K">
+                                        <rect key="frame" x="56" y="423" width="262" height="129"/>
+                                        <color key="backgroundColor" red="0.18520627349999999" green="0.90248694640000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="129" id="fJM-fL-cA2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <state key="normal" title="Check In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSk-Cq-nsd"/>
+                                            <segue destination="cEJ-JD-HIg" kind="show" identifier="QuickCheckin" id="EIR-VW-wBt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90446622099999996" green="0.91991003380000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="NzF-4x-9cj" firstAttribute="leading" secondItem="KUg-bD-LoW" secondAttribute="leading" constant="16" id="113-Lu-FRK"/>
+                                    <constraint firstItem="TxC-za-5Hf" firstAttribute="centerY" secondItem="KUg-bD-LoW" secondAttribute="centerY" id="1dB-H1-rD9"/>
+                                    <constraint firstItem="TxC-za-5Hf" firstAttribute="leading" secondItem="KUg-bD-LoW" secondAttribute="leading" constant="78" id="B5g-QO-nor"/>
+                                    <constraint firstItem="nfK-DX-j5K" firstAttribute="centerX" secondItem="KUg-bD-LoW" secondAttribute="centerX" id="Br4-YH-5gq"/>
+                                    <constraint firstItem="TxC-za-5Hf" firstAttribute="top" secondItem="NzF-4x-9cj" secondAttribute="bottom" constant="65" id="F6m-G1-cQS"/>
+                                    <constraint firstItem="NzF-4x-9cj" firstAttribute="centerX" secondItem="nfK-DX-j5K" secondAttribute="centerX" id="ICc-Oj-aIg"/>
+                                    <constraint firstItem="nfK-DX-j5K" firstAttribute="leading" secondItem="KUg-bD-LoW" secondAttribute="leading" constant="56" id="Kjg-o0-v8d"/>
+                                    <constraint firstItem="TxC-za-5Hf" firstAttribute="trailing" secondItem="nfK-DX-j5K" secondAttribute="trailing" id="LVh-Ve-VWF"/>
+                                    <constraint firstAttribute="bottom" secondItem="nfK-DX-j5K" secondAttribute="bottom" constant="51" id="aAt-n4-Apu"/>
+                                    <constraint firstItem="nfK-DX-j5K" firstAttribute="top" secondItem="TxC-za-5Hf" secondAttribute="bottom" constant="46" id="iKL-CB-vWG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KUg-bD-LoW" firstAttribute="bottom" secondItem="GUI-gH-Pxv" secondAttribute="bottom" id="Hbm-sF-qZY"/>
+                            <constraint firstItem="KUg-bD-LoW" firstAttribute="top" secondItem="GUI-gH-Pxv" secondAttribute="top" id="JUC-wo-7H4"/>
+                            <constraint firstItem="6pQ-Yj-72A" firstAttribute="leading" secondItem="Vbl-xp-hHZ" secondAttribute="leadingMargin" id="LEi-JO-g3Q"/>
+                            <constraint firstAttribute="trailing" secondItem="KUg-bD-LoW" secondAttribute="trailing" id="T1f-xc-ERE"/>
+                            <constraint firstItem="KUg-bD-LoW" firstAttribute="leading" secondItem="Vbl-xp-hHZ" secondAttribute="leading" id="h51-7u-NgK"/>
+                            <constraint firstItem="6pQ-Yj-72A" firstAttribute="top" secondItem="GUI-gH-Pxv" secondAttribute="top" id="hT9-Lk-17m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GUI-gH-Pxv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qXn-ry-icg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger" id="jCT-Dw-56R">
+                            <color key="tintColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" id="2aR-M6-f0g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="name" destination="n8a-kR-2La" id="hVb-Wm-dbs"/>
+                        <outlet property="Home" destination="KUg-bD-LoW" id="rFb-7n-unF"/>
+                        <outlet property="leading" destination="h51-7u-NgK" id="W7P-qR-n7K"/>
+                        <outlet property="name" destination="NzF-4x-9cj" id="ZRh-Ew-LwR"/>
+                        <outlet property="trailing" destination="T1f-xc-ERE" id="iVY-bz-qsD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoH-UN-6Gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775.20000000000005" y="31.934032983508249"/>
+            <point key="canvasLocation" x="1714.4000000000001" y="31.934032983508249"/>
         </scene>
         <!--View Controller Checkin-->
         <scene sceneID="reJ-tb-hCt">
@@ -155,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yL5-gd-bgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629.5999999999999" y="31.934032983508249"/>
+            <point key="canvasLocation" x="2854" y="-415"/>
         </scene>
         <!--View Controller Optional Relief-->
         <scene sceneID="KvB-Ks-UVa">
@@ -367,6 +439,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hamburger" width="25" height="25"/>
         <image name="logoImage" width="191" height="247"/>
     </resources>
     <inferredMetricsTieBreakers>

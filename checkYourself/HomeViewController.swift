@@ -13,8 +13,29 @@ var username = SpotifyLogin.shared.username
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    
+    @IBOutlet weak var Home: UIView!
+    
     @IBOutlet weak var name: UILabel!
     
+    var hamburgerMenuIsVisible = false
+    
+    @IBAction func hamburgerBtnTapped(_ sender: UIBarButtonItem) {
+        if !hamburgerMenuIsVisible {
+            leading.constant = 150
+            trailing.constant = -150
+            
+            hamburgerMenuIsVisible = true
+        } else {
+            leading.constant = 0
+            trailing.constant = 0
+            
+            hamburgerMenuIsVisible = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,12 +21,9 @@ class ViewControllerWellness: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SpotifyLogin.shared.getAccessToken
-        {
-            (token, error) in
+        SpotifyLogin.shared.getAccessToken {(token, error) in
             
             print(token)
-            
             if error != nil, token == nil {
                 print(error)
             }

@@ -22,9 +22,9 @@ class ViewControllerWellness: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SpotifyLogin.shared.getAccessToken {(token, error) in
-            
             print(token)
             if error != nil, token == nil {
+                self.showLoginFlow()
                 print(error)
             }
         }
@@ -35,6 +35,10 @@ class ViewControllerWellness: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showLoginFlow() {
+        performSegue(withIdentifier: "spotifyLogin", sender: (Any).self)
     }
     
     //    classical song -- update to classical playlist

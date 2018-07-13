@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="-470" y="967"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="f9B-Zb-OXE">
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HO7-y0-UXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408.8000000000002" y="-172.26386806596702"/>
+            <point key="canvasLocation" x="3892" y="-817"/>
         </scene>
         <!--View Controller Wellness-->
         <scene sceneID="lsm-HB-ekz">
@@ -305,6 +305,14 @@
                                     <action selector="meditate:" destination="gkx-DL-mgx" eventType="touchUpInside" id="le1-7r-zFl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-xa-8fX">
+                                <rect key="frame" x="78" y="617" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogin" id="p9j-1t-Cwn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wzu-qa-s6a"/>
@@ -312,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjv-vm-MS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4079" y="-1"/>
+            <point key="canvasLocation" x="5572" y="-313"/>
         </scene>
         <!--View Controller Sulk-->
         <scene sceneID="GgK-lU-qFh">
@@ -355,14 +363,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIj-Pd-e6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="595"/>
+            <point key="canvasLocation" x="4423" y="905"/>
         </scene>
     </scenes>
     <resources>
         <image name="logoImage" width="191" height="247"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z7B-IM-4RE"/>
+        <segue reference="BWx-rF-oqc"/>
         <segue reference="6aD-GM-qyx"/>
     </inferredMetricsTieBreakers>
 </document>

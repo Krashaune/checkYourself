@@ -75,6 +75,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-M8-255">
                                         <rect key="frame" x="0.0" y="90" width="82" height="30"/>
                                         <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="mVS-Wh-MgA"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogout" id="qJ3-HV-mem"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -392,7 +396,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjv-vm-MS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5572" y="-313"/>
+            <point key="canvasLocation" x="5016.8000000000002" y="-1.3493253373313345"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ccF-aM-a4i">
+            <objects>
+                <viewController id="YPs-0b-QPC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRs-GD-CBI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hto-pa-mAr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oCo-wb-NqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2277" y="764"/>
         </scene>
         <!--View Controller Sulk-->
         <scene sceneID="GgK-lU-qFh">
@@ -435,7 +454,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIj-Pd-e6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4423" y="905"/>
+            <point key="canvasLocation" x="3530" y="608"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HIZ-4t-E0u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eb5-j7-Wqp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IYX-3a-yHc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w9X-oK-MTn" kind="relationship" relationship="rootViewController" id="3GY-OC-Nij"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EHv-4x-zaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775.20000000000005" y="31.934032983508249"/>
         </scene>
     </scenes>
     <resources>
@@ -443,7 +480,8 @@
         <image name="logoImage" width="191" height="247"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BWx-rF-oqc"/>
-        <segue reference="6aD-GM-qyx"/>
+        <segue reference="RB2-3l-05q"/>
+        <segue reference="xhD-tz-x93"/>
+        <segue reference="qJ3-HV-mem"/>
     </inferredMetricsTieBreakers>
 </document>

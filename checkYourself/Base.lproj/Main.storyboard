@@ -276,7 +276,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="1cE-GA-Caz"/>
+                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="8TZ-F0-U0R"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text talking about choosing relief" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-Xr-Pl2">

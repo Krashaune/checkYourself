@@ -9,6 +9,8 @@
 import UIKit
 import SpotifyLogin
 
+var username = SpotifyLogin.shared.username
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
@@ -16,12 +18,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        name.text = "Hello !"
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        name.text = "Hello username !"
+        
     }
 
     override func didReceiveMemoryWarning() {

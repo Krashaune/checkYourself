@@ -48,17 +48,17 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        print (indexPath.item)
-        print (indexPath)
         
+        print (indexPath.item)
+        print("user has clicked an emotion button")
         
     }
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        combined.addObjects(from: [redEmotions,yellowEmotions,blueEmotions,greenEmotions])
+//        logging flow
+        print("collection view of emotions present")
 
         // Do any additional setup after loading the view.
     }

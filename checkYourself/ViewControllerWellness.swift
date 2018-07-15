@@ -21,13 +21,23 @@ class ViewControllerWellness: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        logging flow
+        print("wellness view has loaded")
+        print("about to call the getAccessToken function")
+        
         SpotifyLogin.shared.getAccessToken {(token, error) in
             print(token)
+            print("inside get access token function")
             if error != nil, token == nil {
-                self.showLoginFlow()
+                print("there was an error and token was nil")
                 print(error)
+                print("about to reroute to login with spotify")
+                self.showLoginFlow()
             }
         }
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -38,6 +48,7 @@ class ViewControllerWellness: UIViewController {
     }
     
     func showLoginFlow() {
+        print("reroute function called")
         performSegue(withIdentifier: "spotifyLogin", sender: (Any).self)
     }
     

@@ -34,7 +34,7 @@ class ViewControllerLogin: UIViewController {
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65).isActive = true
         
-//       
+//       SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead,.playlistReadPrivate])
 
 //      Adding an observer notification for when log in is completed
         NotificationCenter.default.addObserver(
@@ -46,16 +46,15 @@ class ViewControllerLogin: UIViewController {
     }
     
     
-    @IBAction func didTapLogin(_ sender:UIButton) {
+    @IBAction func didTapLogin(_ sender: UIButton) {
         print("login button clicked")
-        SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead,.playlistReadPrivate])
         
     }
     
     @objc func loginSuccessful() {
         print("logged in successfully")
         self.navigationController?.popViewController(animated: true)
-//        self.performSegue(withIdentifier: "segueLogin", sender: self)
+        self.performSegue(withIdentifier: "segueLogin", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,7 +21,7 @@ class ViewControllerWellness: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAccessToken()
+//        getAccessToken()
 //        logging flow
         print("wellness view has loaded")
     
@@ -29,19 +29,19 @@ class ViewControllerWellness: UIViewController {
     }
     
 //    get the access token for the api calls
-    func getAccessToken(){
-        print("inside the getAccessToken function")
-        SpotifyLogin.shared.getAccessToken {(token, error) in
-            print(token)
-            print("inside get access token function")
-            if error != nil, token == nil {
-                print("there was an error and token was nil")
-                print(error)
-                print("about to reroute to login with spotify")
-                self.showLoginFlow()
-            }
-        }
-    }
+//    func getAccessToken(){
+//        print("inside the getAccessToken function")
+//        SpotifyLogin.shared.getAccessToken {(token, error) in
+//            print(token)
+//            print("inside get access token function")
+//            if error != nil, token == nil {
+//                print("there was an error and token was nil")
+//                print(error)
+//                print("about to reroute to login with spotify")
+//                self.showLoginFlow()
+//            }
+//        }
+//    }
     
     func showLoginFlow() {
         print("reroute function called")
@@ -62,7 +62,7 @@ class ViewControllerWellness: UIViewController {
         var urlRequest = URLRequest(url: url)
 //        urlRequest.setValue("Bearer" + token, forHTTPHeaderField: "Authorization")
         
-        urlRequest.setValue("Bearer BQBNmcoLX9wc5zXX8Tjbd1HJkgBL8l9RQBHYorVSCEpb7_xF9ta_WV7JmEfbTSBiCecTAiRlkNItYq3W9ax2CrGtG5j0Rd6D2odYIy6S1xBS_VsghjOuD2h5omj7Z1P7EtiQJHnFc6qQWWjR4ATDMh0mFuY0YIpIlI-7UQ" , forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer BQCtb0vNWWwHiqu0jKaUpigMXjlLBzoQw7ESqdJ5H5rpXMDMe4GJrOnoWtgQTjp8m7Bz9FShXA40KJrsP0TpzsEycM1GMfPbae2AEBVrPQCeUGFPh24UN3-eg-XpTpJm4lqF4k74aO6TLInDa8c_dR8cSkW_-BlKVovYxIdwRy_SHw" , forHTTPHeaderField: "Authorization")
         
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data, response, error) in

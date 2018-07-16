@@ -62,7 +62,7 @@ class ViewControllerWellness: UIViewController {
         var urlRequest = URLRequest(url: url)
 //        urlRequest.setValue("Bearer" + token, forHTTPHeaderField: "Authorization")
         
-        urlRequest.setValue("Bearer BQCtb0vNWWwHiqu0jKaUpigMXjlLBzoQw7ESqdJ5H5rpXMDMe4GJrOnoWtgQTjp8m7Bz9FShXA40KJrsP0TpzsEycM1GMfPbae2AEBVrPQCeUGFPh24UN3-eg-XpTpJm4lqF4k74aO6TLInDa8c_dR8cSkW_-BlKVovYxIdwRy_SHw" , forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer BQBy5ubPLZbgbh5xzgy0eIKzMRvBDYlqHjUnyV1wC-0i6Ckwkv26Q5PMXySEt6Ug-gEDx_oBienYcPhgjP96nMHrCUjlpJpzrs8UzFrFU_G5x05x71Rt2Db0zpD6A59h-h6P2pnTIRT7UYD0eCvC3598prmeG032Pfr4V0n8oZGrFA" , forHTTPHeaderField: "Authorization")
         
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data, response, error) in

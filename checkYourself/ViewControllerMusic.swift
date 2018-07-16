@@ -9,11 +9,15 @@
 import UIKit
 
 class ViewControllerMusic: UIViewController {
-
+    
+    var musicPlaylists = ""
+    
+    @IBOutlet weak var musicLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        musicLabel.text = musicPlaylists
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,19 +9,23 @@
 import UIKit
 import SpotifyLogin
 
-struct Playlist: Decodable {
+struct playlist: Decodable {
     let name: String
     let id: String
+    
 }
 
 class ViewControllerWellness: UIViewController {
 
+    var allPlaylists: String = ""
+    var token: String = ""
+    
 //    let baseUrl =  "https://api.spotify.com/v1/"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getAccessToken()
+        getAccessToken()
 //        logging flow
         print("wellness view has loaded")
     
@@ -29,19 +33,22 @@ class ViewControllerWellness: UIViewController {
     }
     
 //    get the access token for the api calls
-//    func getAccessToken(){
-//        print("inside the getAccessToken function")
-//        SpotifyLogin.shared.getAccessToken {(token, error) in
-//            print(token)
-//            print("inside get access token function")
-//            if error != nil, token == nil {
-//                print("there was an error and token was nil")
-//                print(error)
-//                print("about to reroute to login with spotify")
-//                self.showLoginFlow()
-//            }
-//        }
-//    }
+    func getAccessToken(){
+        print("inside the getAccessToken function")
+        SpotifyLogin.shared.getAccessToken {(token, error) in
+            if token != nil {
+                self.token = token!
+            }
+            print(token)
+            print("inside get access token function")
+            if error != nil, token == nil {
+                print("there was an error and token was nil")
+                print(error)
+                print("about to reroute to login with spotify")
+                self.showLoginFlow()
+            }
+        }
+    }
     
     func showLoginFlow() {
         print("reroute function called")
@@ -60,22 +67,43 @@ class ViewControllerWellness: UIViewController {
         
         
         var urlRequest = URLRequest(url: url)
-//        urlRequest.setValue("Bearer" + token, forHTTPHeaderField: "Authorization")
-        
-        urlRequest.setValue("Bearer BQBy5ubPLZbgbh5xzgy0eIKzMRvBDYlqHjUnyV1wC-0i6Ckwkv26Q5PMXySEt6Ug-gEDx_oBienYcPhgjP96nMHrCUjlpJpzrs8UzFrFU_G5x05x71Rt2Db0zpD6A59h-h6P2pnTIRT7UYD0eCvC3598prmeG032Pfr4V0n8oZGrFA" , forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+    
         
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data, response, error) in
             if let response = response {
-                print(response)
+//                print(response)
             }
             
             if let data = data {
-                print(data)
+//                print(data)
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
+                    let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+//                    print(json)
+                    
+//                    var i: Int = 0
+                    
+                    for (key, value) in json {
+//                        print("\(key) --- \(value)")
+                        
+                        if (key == "items") {
+                            if let itemsArray:[ [String:Any] ] = value as? [ [String : Any] ] {
+                                print ("is array of dict")
+                                for dict in itemsArray {
+                                    for (key,value) in dict {
+                                        if key == "name"{
+                                            print("playlist name: \(value)")
+                                            self.allPlaylists.append(value as! String)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                }catch {
                     print(error   )
                 }
             }
@@ -83,7 +111,15 @@ class ViewControllerWellness: UIViewController {
         //        UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/2ZrF3UfwS50CKE8jQQVjWj")! as URL)
         
     }
-        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewControllerMusic {
+            let vc = segue.destination as? ViewControllerMusic
+
+            vc?.musicPlaylists = allPlaylists
+        }
+    }
+    
     
         //    R&B song Best Part
 //    @IBAction func uplift(_ sender: UIButton) {
@@ -112,4 +148,5 @@ class ViewControllerWellness: UIViewController {
     */
 
 }
+
 

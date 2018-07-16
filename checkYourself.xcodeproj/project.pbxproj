@@ -11,6 +11,7 @@
 		B309AD2420EC45EE00D11A99 /* ViewControllerOptionalRelief.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AD2320EC45EE00D11A99 /* ViewControllerOptionalRelief.swift */; };
 		B309AD2620EE9C1A00D11A99 /* ViewControllerWellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AD2520EE9C1A00D11A99 /* ViewControllerWellness.swift */; };
 		B309AD2820EEB0E700D11A99 /* ViewControllerSulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309AD2720EEB0E700D11A99 /* ViewControllerSulk.swift */; };
+		B330940520FD236A00B5D946 /* ViewControllerMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330940420FD236A00B5D946 /* ViewControllerMusic.swift */; };
 		B358B94820F3D2AA0081AC55 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B358B94720F3D2AA0081AC55 /* ViewControllerLogin.swift */; };
 		B38C895B20EAD2820041B715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C895A20EAD2820041B715 /* AppDelegate.swift */; };
 		B38C895D20EAD2820041B715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C895C20EAD2820041B715 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		B309AD2320EC45EE00D11A99 /* ViewControllerOptionalRelief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOptionalRelief.swift; sourceTree = "<group>"; };
 		B309AD2520EE9C1A00D11A99 /* ViewControllerWellness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWellness.swift; sourceTree = "<group>"; };
 		B309AD2720EEB0E700D11A99 /* ViewControllerSulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSulk.swift; sourceTree = "<group>"; };
+		B330940420FD236A00B5D946 /* ViewControllerMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMusic.swift; sourceTree = "<group>"; };
 		B358B94720F3D2AA0081AC55 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		B38C895720EAD2820041B715 /* checkYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = checkYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38C895A20EAD2820041B715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B38C897820EC2D7B0041B715 /* ViewControllerCheckin.swift */,
 				B309AD2320EC45EE00D11A99 /* ViewControllerOptionalRelief.swift */,
 				B309AD2520EE9C1A00D11A99 /* ViewControllerWellness.swift */,
+				B330940420FD236A00B5D946 /* ViewControllerMusic.swift */,
 				B309AD2720EEB0E700D11A99 /* ViewControllerSulk.swift */,
 				B38C896120EAD2840041B715 /* Assets.xcassets */,
 				B38C896E20EAE6420041B715 /* 232767479017212.png */,
@@ -235,6 +238,7 @@
 				B3AF5C8620F572AB004ACC08 /* Config.swift in Sources */,
 				B38C897720EC2B320041B715 /* CollectionViewCell.swift in Sources */,
 				B38C897920EC2D7B0041B715 /* ViewControllerCheckin.swift in Sources */,
+				B330940520FD236A00B5D946 /* ViewControllerMusic.swift in Sources */,
 				B309AD2620EE9C1A00D11A99 /* ViewControllerWellness.swift in Sources */,
 				B38C895B20EAD2820041B715 /* AppDelegate.swift in Sources */,
 				B38C896D20EAD8370041B715 /* HomeViewController.swift in Sources */,

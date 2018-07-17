@@ -13,7 +13,7 @@ class ViewControllerMusic: UIViewController {
     
     var token: String = ""
     var playlistId = ""
-    var songs: String = ""
+    var songs: [String: String] = [:]
     
     
     
@@ -41,56 +41,41 @@ class ViewControllerMusic: UIViewController {
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-                    
-                
-                    for (key, value) in json {
-//                        print(json)
-                        
-                        if (key == "items") {
-                            if let itemsArray:[ [String: Any] ] = value as? [ [String : Any] ] {
-                                print ("is array of dict")
-                                for track in itemsArray {
-                                    for (key, value) in track {
-                                        if (key == "track") {
-                                            if let trackItems: [String: Any] = value as! [String: Any]{
-                                                if (key == "name") {
-                                                    print("song name: \(value)")
-                                                }
-                                            }
-                                            
-                                            self.songs.append ( value as! String)
-                                        }
-                                    }
-                                    
-                                }
+                    let itemsArray:[ [String: Any] ] = json["items"] as! [ [String : Any] ]
+        
+                    for track in itemsArray {
+                        for (key, value) in track {
+                            if (key == "track") {
+                                let trackItems: [String: Any] = value as! [String: Any]
+                                let name: String = trackItems["name"] as! String
+//                                print(name)
+                                self.songs["name"] = name
+                                print(self.songs)
+//                                self.songs["name"].append(name)
+//                                self.musicLabel.text = self.songs["name"]
                             }
                         }
                         
                     }
                     
                 }catch {
-                    print(error   )
+                    print(error)
                 }
             }
             }.resume()
         
-        musicLabel.text = self.songs
+//        musicLabel.text = self.songs
     }
     
     
     
     func getAccessToken(){
-        print("inside the getAccessToken function")
         SpotifyLogin.shared.getAccessToken {(token, error) in
             if token != nil {
                 self.token = token!
             }
-            print(token)
-            print("inside get access token function")
+
             if error != nil, token == nil {
-                print("there was an error and token was nil")
-                print(error)
-                print("about to reroute to login with spotify")
                 self.showLoginFlow()
             }
         }

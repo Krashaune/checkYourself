@@ -13,24 +13,30 @@ import SpotifyLogin
 var spotifyLogin: UIButton?
 
 class ViewControllerLogin: UIViewController {
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//      Logging the flow
+        print ("App Login view has loaded")
         
-        print ("Ive loaded")
-        
+//        setting button to log in with spotify with scopes defined
         let button = SpotifyLoginButton(viewController: self,
                                         scopes: [.streaming,
-                                                 .userLibraryRead])
+                                                 .userLibraryRead, .playlistReadPrivate, .userModifyPlaybackState])
         
         self.view.addSubview(button)
         spotifyLogin = button
-        
+
+//      Designing the button
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65).isActive = true
+        
+//       SpotifyLoginPresenter.login(from: self, scopes: [.streaming, .userLibraryRead,.playlistReadPrivate])
 
-        // Do any additional setup after loading the view.
+//      Adding an observer notification for when log in is completed
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(loginSuccessful),
@@ -39,9 +45,15 @@ class ViewControllerLogin: UIViewController {
         )
     }
     
+    
+    @IBAction func didTapLogin(_ sender: UIButton) {
+        print("login button clicked")
+        
+    }
+    
     @objc func loginSuccessful() {
         print("logged in successfully")
-//        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
         self.performSegue(withIdentifier: "segueLogin", sender: self)
     }
 

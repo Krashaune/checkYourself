@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class ViewControllerOptionalRelief: UIViewController {
 
@@ -20,14 +21,18 @@ class ViewControllerOptionalRelief: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        checkedEmotion.text = "You checked in as feeling..." 
+//        logged flow
+        print("optional relief view has loaded")
+        checkedEmotion.text = "You checked in as feeling..."
         btnRelief.layer.cornerRadius = 10
         btnSulk.layer.cornerRadius = 10
+        
     }
     
     

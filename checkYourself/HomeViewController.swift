@@ -9,6 +9,8 @@
 import UIKit
 import SpotifyLogin
 
+var username = SpotifyLogin.shared.username
+
 class HomeViewController: UIViewController {
 
     
@@ -34,9 +36,20 @@ class HomeViewController: UIViewController {
             hamburgerMenuIsVisible = false
         }
     }
+    @IBAction func didTapLogOut(_ sender: UIButton) {
+        SpotifyLogin.shared.logout()
+        performSegue(withIdentifier: "spotifyLogout", sender: UIButton.self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//      logging the flow
+        print("The home view is loaded")
+
+        name.text = "Hello !"
+        
         // Do any additional setup after loading the view.
     }
     

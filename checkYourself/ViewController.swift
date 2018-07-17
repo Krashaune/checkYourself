@@ -10,22 +10,13 @@ import UIKit
 import SpotifyLogin
 
 
-var username = SpotifyLogin.shared.username
+
 
 class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        SpotifyLogin.shared.getAccessToken { (token, error) in
-            if error != nil, token == nil {
-                self.showLoginFlow(spotifyLogin!)
-            }
-        }
-    }
-    
-    func showLoginFlow(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "segueLogin", sender: self)
     }
     
     

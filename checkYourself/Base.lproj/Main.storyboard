@@ -19,10 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="NQI-X1-fMk">
-                                <rect key="frame" x="14" y="30" width="346" height="532"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ani-iP-2OC">
                                 <rect key="frame" x="164" y="594" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,6 +27,10 @@
                                     <segue destination="Eb5-j7-Wqp" kind="show" identifier="segueLogin" id="gGp-l5-7Rs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="NQI-X1-fMk">
+                                <rect key="frame" x="16" y="54" width="346" height="532"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="-470" y="967"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="f9B-Zb-OXE">
@@ -79,6 +79,10 @@
                                         <rect key="frame" x="0.0" y="102" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="mVS-Wh-MgA"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogout" id="qJ3-HV-mem"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -449,7 +453,8 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="1cE-GA-Caz"/>
+                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="8TZ-F0-U0R"/>
+                                    <segue destination="e21-tQ-8aG" kind="show" identifier="segueMusic" id="agh-bU-qMp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-Xr-Pl2">
@@ -491,6 +496,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-xa-8fX">
+                                <rect key="frame" x="78" y="617" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogin" id="p9j-1t-Cwn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92633889845907158" green="0.8427591365276903" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Wzu-qa-s6a"/>
@@ -499,6 +512,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjv-vm-MS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5016.8000000000002" y="-1.3493253373313345"/>
+        </scene>
+        <!--View Controller Music-->
+        <scene sceneID="yE3-5l-kSx">
+            <objects>
+                <viewController id="e21-tQ-8aG" customClass="ViewControllerMusic" customModule="checkYourself" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jYf-3M-91c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7H-N5-qyK">
+                                <rect key="frame" x="16" y="142" width="343" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wiV-38-pSZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="musicLabel" destination="x7H-N5-qyK" id="wmw-lx-q2d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdy-rh-Crg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5820" y="3.1484257871064472"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ccF-aM-a4i">
@@ -616,6 +656,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="z7B-IM-4RE"/>
-        <segue reference="EIR-VW-wBt"/>
+        <segue reference="xhD-tz-x93"/>
+        <segue reference="p9j-1t-Cwn"/>
     </inferredMetricsTieBreakers>
 </document>

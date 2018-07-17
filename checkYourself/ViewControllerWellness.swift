@@ -7,42 +7,46 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class ViewControllerWellness: UIViewController {
 
-//    var baseUrl = URL(string: "https://api.spotify.com/v1")
-//    var getPlaylists = URL(string: users/k33rayt/)
+    var playlistName: String = ""
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
+        print("wellness view has loaded")
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    classical song -- update to classical playlist
+
     @IBAction func relax(_ sender: UIButton) {
-        UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/2ZrF3UfwS50CKE8jQQVjWj")! as URL)
+        self.playlistName = "3zzUUYkIdkNRrjmNGR3iLD"
         
     }
-    
-//    R&B song Best Part
     @IBAction func uplift(_ sender: UIButton) {
-         UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/4OBZT9EnhYIV17t4pGw7ig")! as URL)
+        self.playlistName = "4HrGgQJO9FUoqhsHthx42l"
     }
     
-//    Beyonce Party
     @IBAction func happy(_ sender: UIButton) {
-         UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/42qh86p7TLXyumxSHn65kc")! as URL)
+        self.playlistName = "4GaJ65U4qkE7qKJEDrnv0W"
     }
     
-//    meditation or nature sounds
     @IBAction func meditate(_ sender: UIButton) {
-         UIApplication.shared.openURL(NSURL(string: "https://open.spotify.com/track/7yRgW5WzxdocmkJxn9h4BP")! as URL)
+        self.playlistName = "37i9dQZF1DX7gIoKXt0gmx"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewControllerMusic {
+            let vc = segue.destination as? ViewControllerMusic
+
+            vc?.playlistId = playlistName
+        }
     }
     
     
@@ -57,3 +61,5 @@ class ViewControllerWellness: UIViewController {
     */
 
 }
+
+

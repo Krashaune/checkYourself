@@ -21,11 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("before calling the SPLconfigure func")
         SpotifyLogin.shared.configure(clientID: clientID!, clientSecret: clientSecret!, redirectURL: redirectURL)
+
+//      Logging the flow 
+        print("Application launched")
+        print(redirectURL)
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("before calling SPL applicationOpenURL func")
         let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in }
         return handled
     }

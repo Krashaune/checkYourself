@@ -42,23 +42,26 @@ class ViewControllerMusic: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
                     
+                
                     for (key, value) in json {
-                        print(json)
+//                        print(json)
                         
                         if (key == "items") {
-                            if let itemsArray:[ [String:Any] ] = value as? [ [String : Any] ] {
+                            if let itemsArray:[ [String: Any] ] = value as? [ [String : Any] ] {
                                 print ("is array of dict")
-                                for dict in itemsArray {
-                                    for (key, value) in dict {
-                                        if (key == "name") {
-                                            print("song name: \(value)")
-                                            self.songs.append(value as! String)
-//                                            if key == "artist"{
-//                                                print("artist name: \(value)")
-//                                            }
+                                for track in itemsArray {
+                                    for (key, value) in track {
+                                        if (key == "track") {
+                                            if let trackItems: [String: Any] = value as! [String: Any]{
+                                                if (key == "name") {
+                                                    print("song name: \(value)")
+                                                }
+                                            }
                                             
+                                            self.songs.append ( value as! String)
                                         }
                                     }
+                                    
                                 }
                             }
                         }
@@ -71,7 +74,7 @@ class ViewControllerMusic: UIViewController {
             }
             }.resume()
         
-        musicLabel.text = songs
+        musicLabel.text = self.songs
     }
     
     

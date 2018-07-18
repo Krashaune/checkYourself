@@ -31,6 +31,7 @@ class ViewControllerWellness: UIViewController {
     }
     @IBAction func uplift(_ sender: UIButton) {
         self.playlistName = "4HrGgQJO9FUoqhsHthx42l"
+        performSegue(withIdentifier: "segueMusic", sender: UIButton.self)
     }
     
     @IBAction func happy(_ sender: UIButton) {

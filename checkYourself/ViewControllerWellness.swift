@@ -25,7 +25,7 @@ class ViewControllerWellness: UIViewController {
     
 
     @IBAction func relax(_ sender: UIButton) {
-        self.playlistName = "3zzUUYkIdkNRrjmNGR3iLD"
+        self.playlistName = "3zzUUYkIdkNRrjmNGR3iLD" 
         
     }
     @IBAction func uplift(_ sender: UIButton) {

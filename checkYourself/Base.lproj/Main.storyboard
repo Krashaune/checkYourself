@@ -567,6 +567,7 @@
                         <viewLayoutGuide key="safeArea" id="wiV-38-pSZ"/>
                     </view>
                     <connections>
+                        <outlet property="playButton" destination="qoZ-rm-rFv" id="rYc-RH-lMW"/>
                         <outlet property="songTable" destination="sSD-6h-wBw" id="Iky-D3-Asf"/>
                     </connections>
                 </viewController>

@@ -18,18 +18,16 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         return numOfSongs.count
     }
     
-    
-    
-    
     var token: String = ""
     var playlistId = ""
     var songs: [String: String] = ["name": ""]
     var numOfSongs: [String] = []
     var names: [String] = []
-    
+    var uri: [String] = []
     
     @IBOutlet weak var songTable: UITableView!
     
+    @IBOutlet weak var playButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +56,9 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                             if (key == "track") {
                                 let trackItems: [String: Any] = value as! [String: Any]
                                 guard let name: String = trackItems["name"] as? String else {return}
+                                guard let uri: String = trackItems["uri"] as? String else {return}
+                                self.uri.append(uri)
+                                print(uri)
                                 self.songs["name"] = name
 //                                print(self.songs)
                                 self.numOfSongs.append(name)

@@ -62,10 +62,14 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
 //                                print(self.songs)
                                 self.numOfSongs.append(name)
 //                                print(self.numOfSongs)
+                                DispatchQueue.main.async {
+                                    self.songTable.reloadData()
+                                }
+                                
                             }
                         }
                     }
-                    self.songTable.reloadData()
+//                    self.songTable.reloadData()
                 }catch {
                     print(error)
                 }

@@ -26,8 +26,8 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     var uri: [String] = []
     
     @IBOutlet weak var songTable: UITableView!
+ 
     
-    @IBOutlet weak var playButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,12 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         cell.songName.text = text
         
         return cell
+    }
+    
+    @IBAction func playButton(_ sender: UIButton) {
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = songTable.cellForRow(at: indexPath) as! TableViewCellSong
+        print("I am next \(String(describing: cell.songName.text))")
     }
     
     

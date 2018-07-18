@@ -44,13 +44,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//      logging the flow
-        print("The home view is loaded")
-
-        name.text = "Hello !"
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool)

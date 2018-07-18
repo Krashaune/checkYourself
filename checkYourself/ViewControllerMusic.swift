@@ -58,26 +58,19 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                             if (key == "track") {
                                 let trackItems: [String: Any] = value as! [String: Any]
                                 guard let name: String = trackItems["name"] as? String else {return}
-//                                print(name)
                                 self.songs["name"] = name
 //                                print(self.songs)
                                 self.numOfSongs.append(name)
 //                                print(self.numOfSongs)
                             }
-//                            print(self.numOfSongs)
                         }
-//                        print(self.numOfSongs)
                     }
                     self.songTable.reloadData()
-//                    print(self.numOfSongs)
                 }catch {
                     print(error)
                 }
             }
-
-//            self.numOfSongs
             }.resume()
-//        self.songTable.reloadData()
         
     }
     

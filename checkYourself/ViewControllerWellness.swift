@@ -15,7 +15,6 @@ class ViewControllerWellness: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        print("wellness view has loaded")
 
     }
 

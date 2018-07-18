@@ -57,9 +57,6 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        logging flow
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -19,6 +19,8 @@ let blueEmotions = ["Disgusted", "Disappointed", "Glum", "Ashamed", "Mortified",
 let emotions = ["Enraged","Furious", "Fustrated", "Shocked", "Livid", "Frightened", "Nervous", "Restless", "Fuming", "Apprehensive", "Worried", "Annoyed", "Repulsed", "Troubled", "Uneasy", "Peeved", "Surprised", "Upbeat", "Motivated", "Ecstatic", "Hyper", "Cheerful", "Inspired", "Elated", "Energized", "Lively", "Optimistic", "Thrilled", "Pleasant", "Joyful", "Proud", "Blissful", "Blessed", "At Ease", "Content", "Fulfilled", "Humble", "Secure", "Chill", "Grateful", "Calm", "Satisfied", "Relaxed", "Carefree", "Relieved", "Restful", "Tranquil", "Serene", "Disgusted", "Disappointed", "Glum", "Ashamed", "Mortified", "Alienated", "Mopey", "Apathetic", "Embarrassed", "Excluded", "Timid", "Drained", "Alone", "Down", "Bored", "Tired"]
 
 class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    var emotionReport: [String] = []
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return emotions.count
@@ -48,9 +50,11 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        
-        print (indexPath.item)
         print("user has clicked an emotion button")
+        print ("index \(indexPath.item)")
+        print ("emotion \(emotions[indexPath.item])")
+        emotionReport.append(emotions[indexPath.item])
+        print(emotionReport)
         
     }
    

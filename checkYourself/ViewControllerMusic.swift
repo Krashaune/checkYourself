@@ -81,11 +81,8 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell") as! TableViewCellSong
-        
         let text = self.numOfSongs[indexPath.row]
-        
         cell.songName.text = text
-        
         
         return cell
     }

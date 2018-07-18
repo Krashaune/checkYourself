@@ -58,7 +58,6 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
 //        logging flow
-        print("collection view of emotions present")
 
         // Do any additional setup after loading the view.
     }

@@ -89,12 +89,22 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func playButton(_ sender: UIButton) {
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = songTable.cellForRow(at: indexPath) as! TableViewCellSong
-        print("I am next \(String(describing: cell.songName.text))")
+        DispatchQueue.main.async {
+            self.songTable.reloadData()
+        }
+
+        let c = songTable.indexPathForSelectedRow?.item
+        print (c as Any)
+        print(self.numOfSongs[c!])
     }
     
+    func getSongUri() {
+        
+    }
     
+    func playSong() {
+        
+    }
     
     func getAccessToken(){
         SpotifyLogin.shared.getAccessToken {(token, error) in

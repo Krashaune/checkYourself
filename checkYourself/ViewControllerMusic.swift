@@ -77,7 +77,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
 
 //            self.numOfSongs
             }.resume()
-        self.songTable.reloadData()
+//        self.songTable.reloadData()
         
     }
     

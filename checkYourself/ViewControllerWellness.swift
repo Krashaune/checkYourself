@@ -35,10 +35,12 @@ class ViewControllerWellness: UIViewController {
     
     @IBAction func happy(_ sender: UIButton) {
         self.playlistName = "4GaJ65U4qkE7qKJEDrnv0W"
+        performSegue(withIdentifier: "segueMusic", sender: UIButton.self)
     }
     
     @IBAction func meditate(_ sender: UIButton) {
         self.playlistName = "37i9dQZF1DX7gIoKXt0gmx"
+        performSegue(withIdentifier: "segueMusic", sender: UIButton.self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -26,14 +26,15 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     var uri: [String] = []
     var contextUri = ""
     var dictBody: [String : String] = [:]
+    var play = ""
     
     @IBOutlet weak var songTable: UITableView!
     
     
     @IBOutlet weak var playlistImage: UIImageView!
     
-    @IBAction func playPlaylist(_ sender: UIButton) {
-    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +44,21 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         let playlist = self.playlistId
         
         guard let url = URL(string:"https://api.spotify.com/v1/users/k33rayt/playlists/\(self.playlistId)/tracks") else {return}
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
         print(urlRequest)
-
+        
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data, response, error) in
             if let response = response {
             }
-
+            
             if let data = data  {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
                     let itemsArray:[ [String: Any] ] = json["items"] as! [ [String : Any] ]
-
+                    
                     for track in itemsArray {
                         for (key, value) in track {
                             if (key == "track") {
@@ -69,32 +70,29 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                                 self.songs["name"] = name
                                 //                                print(self.songs)
                                 self.numOfSongs.append(name)
-                                //                                print(self.numOfSongs)
+                                //                                    print(self.numOfSongs)
                                 DispatchQueue.main.async {
                                     self.songTable.reloadData()
                                 }
-
+                                
                             }
                         }
                     }
-                    //                    self.songTable.reloadData()
                 }catch {
                     print(error)
                 }
             }
             }.resume()
-
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell") as! TableViewCellSong
         let text = self.numOfSongs[indexPath.row]
         cell.songName.text = text
-
+        
         return cell
     }
-    
     
     func getAccessToken(){
         SpotifyLogin.shared.getAccessToken {(token, error) in
@@ -113,12 +111,51 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "spotifyLogin", sender: (Any).self)
     }
     
-}
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func playPlaylist(_ sender: UIButton) {
+        guard let url = URL(string:"https://api.spotify.com/v1/users/k33rayt/playlists/\(self.playlistId)") else {return}
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+        print(urlRequest)
+        
+        let session = URLSession.shared
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if let response = response {
+                
+            }
+            if let data = data  {
+                print(data)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+                    print(json)
+                    
+                    for (key,value) in json {
+                        if (key == "external_urls"){
+                            let url: [String: Any] =  value as! [String: Any]
+                            guard let openPlaylist: String = url["spotify"] as? String else {return}
+                            self.play.append(openPlaylist)
+                            print(self.play)
+                            UIApplication.shared.open(URL(string:self.play)!, options: [:])
+                        }
+                    }
+                    
+                }catch {
+                    print(error)
+                }
+            }
+            
+            
+        }.resume()
+        
+        
     }
+
+
+override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+}
+}
 
 //        this code is an api call to spotify to get the device id
 //        this was used to debug the issue where a random song
@@ -199,16 +236,16 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
 //        }
 //
 
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
+
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+

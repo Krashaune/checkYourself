@@ -24,6 +24,8 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     var numOfSongs: [String] = []
     var names: [String] = []
     var uri: [String] = []
+    var contextUri = ""
+    var dictBody: [String : String] = [:]
     
     @IBOutlet weak var songTable: UITableView!
  
@@ -94,17 +96,50 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         }
 
         let c = songTable.indexPathForSelectedRow?.item
+//        index
         print (c as Any)
+        contextUri += uri[c!]
+//        name
         print(self.numOfSongs[c!])
+        
+        func getSongUri() {
+            
+        }
+        
+        func playSong() {
+            guard let url = URL(string:"https://api.spotify.com/v1/me/player/play/") else {return}
+            var urlRequest = URLRequest(url: url)
+            
+            
+            dictBody["context_uri"] = uri[c!]
+            
+            do {
+                let encoder = JSONEncoder()
+                let serializedBody = try encoder.encode(dictBody)
+                urlRequest.httpBody = serializedBody
+                
+                urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+                print(urlRequest)
+                
+                let session = URLSession.shared
+                session.dataTask(with: urlRequest) { (data, response, error) in
+                    if let response = response {
+                        print(response)
+                    }
+                    if let data = data {
+                        print(data)
+                    }
+                }
+                
+                
+            } catch let error {
+                print(error)
+            }
+            
+        }
+        playSong()
     }
     
-    func getSongUri() {
-        
-    }
-    
-    func playSong() {
-        
-    }
     
     func getAccessToken(){
         SpotifyLogin.shared.getAccessToken {(token, error) in

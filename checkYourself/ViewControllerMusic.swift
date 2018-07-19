@@ -35,24 +35,48 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         
         getAccessToken()
+        
+//        guard let url = URL(string: "https://api.spotify.com/v1/me/player/devices") else {return}
+//        var urlRequest = URLRequest(url:url)
+//        urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+//        
+//        let session = URLSession.shared
+//        session.dataTask(with: urlRequest) { (data, response, error) in
+//            if let response = response {
+//                print (response)
+//            }
+//            
+//            if let data = data {
+//                print (data)
+//                do{
+//                    let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+//                    print (json)
+//                } catch  {
+//                    print (error)
+//                }
+//            }
+//        }.resume()
+        
+        
+        
         let playlist = self.playlistId
         
         guard let url = URL(string:"https://api.spotify.com/v1/users/k33rayt/playlists/\(self.playlistId)/tracks") else {return}
-        
+
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
         print(urlRequest)
-        
+
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data, response, error) in
             if let response = response {
             }
-            
+
             if let data = data  {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
                     let itemsArray:[ [String: Any] ] = json["items"] as! [ [String : Any] ]
-                    
+
                     for track in itemsArray {
                         for (key, value) in track {
                             if (key == "track") {
@@ -68,7 +92,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                                 DispatchQueue.main.async {
                                     self.songTable.reloadData()
                                 }
-                                
+
                             }
                         }
                     }
@@ -78,15 +102,15 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
             }.resume()
-        
+
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell") as! TableViewCellSong
         let text = self.numOfSongs[indexPath.row]
         cell.songName.text = text
-        
+
         return cell
     }
     

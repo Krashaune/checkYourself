@@ -30,34 +30,15 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var songTable: UITableView!
     
     
+    @IBOutlet weak var playlistImage: UIImageView!
+    
+    @IBAction func playPlaylist(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getAccessToken()
-        
-//        guard let url = URL(string: "https://api.spotify.com/v1/me/player/devices") else {return}
-//        var urlRequest = URLRequest(url:url)
-//        urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
-//        
-//        let session = URLSession.shared
-//        session.dataTask(with: urlRequest) { (data, response, error) in
-//            if let response = response {
-//                print (response)
-//            }
-//            
-//            if let data = data {
-//                print (data)
-//                do{
-//                    let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-//                    print (json)
-//                } catch  {
-//                    print (error)
-//                }
-//            }
-//        }.resume()
-        
-        
         
         let playlist = self.playlistId
         
@@ -114,60 +95,6 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    @IBAction func playButton(_ sender: UIButton) {
-//        DispatchQueue.main.async {
-//            self.songTable.reloadData()
-//        }
-        
-        let c = songTable.indexPathForSelectedRow?.item
-        //        index
-        print (c as Any)
-//                contextUri += uri[c!]
-        //        name
-        print(self.numOfSongs[c!])
-    
-        
-        do {
-            let encoder = JSONEncoder()
-            let serializedBody = try encoder.encode(dictBody)
-            
-            guard let url = URL(string:"https://api.spotify.com/v1/me/player/play/") else {return}
-        
-            var urlRequest = URLRequest(url: url)
-            urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
-            urlRequest.httpMethod = "PUT"
-            urlRequest.httpBody = serializedBody
-//            urlRequest.httpBody?.append(serializedBody)
-            
-            print(urlRequest.allHTTPHeaderFields as Any)
-            print (urlRequest.httpBody as Any)
-            print(urlRequest.httpMethod as Any)
-            print(urlRequest)
-            
-            let session = URLSession.shared
-            session.dataTask(with: urlRequest) { (data, response, error) in
-                if let response = response {
-                    print(response)
-                }
-                if let data = data {
-                    do {
-//                        print(data)
-                        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-                        print(json)
-                    }catch {
-                        print(error)
-                    }
-                    
-                }
-                }.resume()
-            
-            
-        } catch let error {
-            print(error)
-        }
-        
-    }
-    
     
     func getAccessToken(){
         SpotifyLogin.shared.getAccessToken {(token, error) in
@@ -186,10 +113,92 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "spotifyLogin", sender: (Any).self)
     }
     
+}
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+//        this code is an api call to spotify to get the device id
+//        this was used to debug the issue where a random song
+//            was playing jumping from multiple devices
+
+//        guard let url = URL(string: "https://api.spotify.com/v1/me/player/devices") else {return}
+//        var urlRequest = URLRequest(url:url)
+//        urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+//
+//        let session = URLSession.shared
+//        session.dataTask(with: urlRequest) { (data, response, error) in
+//            if let response = response {
+//                print (response)
+//            }
+//
+//            if let data = data {
+//                print (data)
+//                do{
+//                    let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+//                    print (json)
+//                } catch  {
+//                    print (error)
+//                }
+//            }
+//        }.resume()
+
+
+//    @IBAction func playButton(_ sender: UIButton) {
+////        DispatchQueue.main.async {
+////            self.songTable.reloadData()
+////        }
+//
+//        let c = songTable.indexPathForSelectedRow?.item
+//        //        index
+//        print (c as Any)
+////                contextUri += uri[c!]
+//        //        name
+//        print(self.numOfSongs[c!])
+//
+//
+//        do {
+//            let encoder = JSONEncoder()
+//            let serializedBody = try encoder.encode(dictBody)
+//
+//            guard let url = URL(string:"https://api.spotify.com/v1/me/player/play/") else {return}
+//
+//            var urlRequest = URLRequest(url: url)
+//            urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+//            urlRequest.httpMethod = "PUT"
+//            urlRequest.httpBody = serializedBody
+////            urlRequest.httpBody?.append(serializedBody)
+//
+//            print(urlRequest.allHTTPHeaderFields as Any)
+//            print (urlRequest.httpBody as Any)
+//            print(urlRequest.httpMethod as Any)
+//            print(urlRequest)
+//
+//            let session = URLSession.shared
+//            session.dataTask(with: urlRequest) { (data, response, error) in
+//                if let response = response {
+//                    print(response)
+//                }
+//                if let data = data {
+//                    do {
+////                        print(data)
+//                        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+//                        print(json)
+//                    }catch {
+//                        print(error)
+//                    }
+//
+//                }
+//                }.resume()
+//
+//
+//        } catch let error {
+//            print(error)
+//        }
+//
+
     
     
     /*

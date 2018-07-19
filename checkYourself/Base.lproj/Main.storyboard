@@ -583,12 +583,16 @@
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="playPlaylist:" destination="e21-tQ-8aG" eventType="touchUpInside" id="rAH-Yh-kqN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wiV-38-pSZ"/>
                     </view>
                     <connections>
+                        <outlet property="playlistImage" destination="nlA-qg-kTV" id="dH5-hW-JeA"/>
                         <outlet property="songTable" destination="sSD-6h-wBw" id="Iky-D3-Asf"/>
                     </connections>
                 </viewController>

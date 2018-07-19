@@ -28,17 +28,17 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     var dictBody: [String : String] = [:]
     
     @IBOutlet weak var songTable: UITableView!
- 
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         getAccessToken()
         let playlist = self.playlistId
         
         guard let url = URL(string:"https://api.spotify.com/v1/users/k33rayt/playlists/\(self.playlistId)/tracks") else {return}
-     
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
         print(urlRequest)
@@ -60,11 +60,11 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                                 guard let name: String = trackItems["name"] as? String else {return}
                                 guard let uri: String = trackItems["uri"] as? String else {return}
                                 self.uri.append(uri)
-                                print(uri)
+                                //                                print(uri)
                                 self.songs["name"] = name
-//                                print(self.songs)
+                                //                                print(self.songs)
                                 self.numOfSongs.append(name)
-//                                print(self.numOfSongs)
+                                //                                print(self.numOfSongs)
                                 DispatchQueue.main.async {
                                     self.songTable.reloadData()
                                 }
@@ -72,7 +72,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                             }
                         }
                     }
-//                    self.songTable.reloadData()
+                    //                    self.songTable.reloadData()
                 }catch {
                     print(error)
                 }
@@ -82,7 +82,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell") as! TableViewCellSong
         let text = self.numOfSongs[indexPath.row]
         cell.songName.text = text
@@ -91,53 +91,57 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func playButton(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            self.songTable.reloadData()
-        }
-
+//        DispatchQueue.main.async {
+//            self.songTable.reloadData()
+//        }
+        
         let c = songTable.indexPathForSelectedRow?.item
-//        index
+        //        index
         print (c as Any)
-        contextUri += uri[c!]
-//        name
+//                contextUri += uri[c!]
+        //        name
         print(self.numOfSongs[c!])
+    
         
-        func getSongUri() {
+        do {
+            let encoder = JSONEncoder()
+            let serializedBody = try encoder.encode(dictBody)
             
-        }
-        
-        func playSong() {
             guard let url = URL(string:"https://api.spotify.com/v1/me/player/play/") else {return}
+        
             var urlRequest = URLRequest(url: url)
+            urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+            urlRequest.httpMethod = "PUT"
+            urlRequest.httpBody = serializedBody
+//            urlRequest.httpBody?.append(serializedBody)
             
+            print(urlRequest.allHTTPHeaderFields as Any)
+            print (urlRequest.httpBody as Any)
+            print(urlRequest.httpMethod as Any)
+            print(urlRequest)
             
-            dictBody["context_uri"] = uri[c!]
-            
-            do {
-                let encoder = JSONEncoder()
-                let serializedBody = try encoder.encode(dictBody)
-                urlRequest.httpBody = serializedBody
-                
-                urlRequest.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
-                print(urlRequest)
-                
-                let session = URLSession.shared
-                session.dataTask(with: urlRequest) { (data, response, error) in
-                    if let response = response {
-                        print(response)
-                    }
-                    if let data = data {
-                        print(data)
-                    }
+            let session = URLSession.shared
+            session.dataTask(with: urlRequest) { (data, response, error) in
+                if let response = response {
+                    print(response)
                 }
-                
-                
-            } catch let error {
-                print(error)
-            }
+                if let data = data {
+                    do {
+//                        print(data)
+                        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+                        print(json)
+                    }catch {
+                        print(error)
+                    }
+                    
+                }
+                }.resume()
             
+            
+        } catch let error {
+            print(error)
         }
-        playSong()
+        
     }
     
     
@@ -146,7 +150,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
             if token != nil {
                 self.token = token!
             }
-
+            
             if error != nil, token == nil {
                 self.showLoginFlow()
             }
@@ -157,21 +161,21 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
         print("reroute function called")
         performSegue(withIdentifier: "spotifyLogin", sender: (Any).self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

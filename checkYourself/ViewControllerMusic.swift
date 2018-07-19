@@ -134,7 +134,7 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                             let url: [String: Any] =  value as! [String: Any]
                             guard let openPlaylist: String = url["spotify"] as? String else {return}
                             self.play.append(openPlaylist)
-                            print(self.play)
+//                            print(self.play)
                             UIApplication.shared.open(URL(string:self.play)!, options: [:])
                         }
                     }

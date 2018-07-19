@@ -17,19 +17,29 @@ class ViewControllerOptionalRelief: UIViewController {
     
     @IBOutlet weak var btnSulk: UIButton!
     
+    var checkedInEmotion = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.updateLabelText()
+        }
         
+        
+        btnRelief.layer.cornerRadius = 10
+        btnSulk.layer.cornerRadius = 10
         
         // Do any additional setup after loading the view.
     }
     
+    func updateLabelText() {
+         checkedEmotion.text = ("You checked in as \(self.checkedInEmotion)")
+        
+    }
     override func viewDidAppear(_ animated: Bool)
     {
-        checkedEmotion.text = "You checked in as feeling..."
-        btnRelief.layer.cornerRadius = 10
-        btnSulk.layer.cornerRadius = 10
+        
         
     }
     

@@ -20,6 +20,7 @@ let emotions = ["Enraged","Furious", "Fustrated", "Shocked", "Livid", "Frightene
 
 class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var emotionReport: [String] = []
+    var currentEmotion: String  =  ""
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -54,8 +55,18 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
         print ("index \(indexPath.item)")
         print ("emotion \(emotions[indexPath.item])")
         emotionReport.append(emotions[indexPath.item])
-        print(emotionReport)
+        self.currentEmotion = emotions[indexPath.item]
+        print(currentEmotion)
+//        print(emotionReport)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewControllerOptionalRelief {
+            let vc = segue.destination as! ViewControllerOptionalRelief
+            
+            vc.checkedInEmotion = self.currentEmotion
+        }
     }
    
 

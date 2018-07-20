@@ -124,10 +124,10 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
                 
             }
             if let data = data  {
-                print(data)
+//                print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-                    print(json)
+//                    print(json)
                     
                     for (key,value) in json {
                         if (key == "external_urls"){

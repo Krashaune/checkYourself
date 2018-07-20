@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     var hamburgerMenuIsVisible = false
     
-    @IBAction func hamburgerBtnTapped(_ sender: UIBarButtonItem) {
+    @IBAction func hamburgerBtnTapped(_ sender: UIButton) {
         if !hamburgerMenuIsVisible {
             leading.constant = 150
             trailing.constant = -150

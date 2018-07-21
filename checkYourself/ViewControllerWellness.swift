@@ -12,11 +12,13 @@ import SpotifyLogin
 class ViewControllerWellness: UIViewController {
 
     var playlistName: String = ""
+    
     var hamburgerMenuIsVisible = false
     
-    @IBOutlet weak var trailing: NSLayoutConstraint!
-    @IBOutlet weak var leading: NSLayoutConstraint!
     
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var leading: NSLayoutConstraint!
     override func viewDidLoad(){
         super.viewDidLoad()
 

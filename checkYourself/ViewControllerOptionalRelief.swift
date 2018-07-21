@@ -18,7 +18,25 @@ class ViewControllerOptionalRelief: UIViewController {
     @IBOutlet weak var btnSulk: UIButton!
     
     var checkedInEmotion = ""
+    var hamburgerMenuIsVisible = false
     
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    
+    @IBAction func hamburgerbtntapped(_ sender: UIButton) {
+        if !hamburgerMenuIsVisible {
+            leading.constant = -150
+            trailing.constant = 150
+            
+            hamburgerMenuIsVisible = true
+        } else {
+            leading.constant = 0
+            trailing.constant = 0
+            
+            hamburgerMenuIsVisible = false
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +45,8 @@ class ViewControllerOptionalRelief: UIViewController {
         }
         
         
-        btnRelief.layer.cornerRadius = 10
-        btnSulk.layer.cornerRadius = 10
+//        btnRelief.layer.cornerRadius = 10
+//        btnSulk.layer.cornerRadius = 10
         
         // Do any additional setup after loading the view.
     }

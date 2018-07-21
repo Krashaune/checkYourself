@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -410,7 +411,7 @@
                                             <constraint firstAttribute="height" constant="100" id="Mcg-9D-SUX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
-                                        <state key="normal" title="Relief">
+                                        <state key="normal" title="Music Therapy">
                                             <color key="titleColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
@@ -489,137 +490,263 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-mQ-gJS">
-                                <rect key="frame" x="200" y="325" width="141" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Uplifting song">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="18" name="Papyrus"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="uplift:" destination="gkx-DL-mgx" eventType="touchUpInside" id="Tou-SG-z0X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Isb-g2-vez">
-                                <rect key="frame" x="32" y="466" width="141" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Happy song">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="18" name="Papyrus"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="happy:" destination="gkx-DL-mgx" eventType="touchUpInside" id="DzQ-ZQ-Lbs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-2k-7WB">
-                                <rect key="frame" x="32" y="325" width="141" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="titleShadowOffset" width="4" height="0.0"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Relaxing song">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="18" name="Papyrus"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="8TZ-F0-U0R"/>
-                                    <segue destination="e21-tQ-8aG" kind="show" identifier="segueMusic" id="agh-bU-qMp"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-Xr-Pl2">
-                                <rect key="frame" x="16" y="98" width="343" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Text talking about choosing relief">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Papyrus"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRN-b9-i6z">
-                                <rect key="frame" x="200" y="466" width="141" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="titleShadowOffset" width="5" height="0.0"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Guided meditation ">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="15" name="Papyrus"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="meditate:" destination="gkx-DL-mgx" eventType="touchUpInside" id="le1-7r-zFl"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose an option below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfZ-kA-Vdi">
-                                <rect key="frame" x="16" y="276" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-xa-8fX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-xa-8fX">
                                 <rect key="frame" x="78" y="617" width="151" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogin" id="p9j-1t-Cwn"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kisspng-picture-frame-sketch-creative-hand-painted-picture-frame-material-retro-5a6c15d620f950.1311524415170329181351" translatesAutoresizingMaskIntoConstraints="NO" id="SuQ-Gn-qij">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pp7-sg-1vq">
+                                <rect key="frame" x="246" y="62" width="97" height="136"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-iu-s4o">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Check In"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-3b-JuU">
+                                        <rect key="frame" x="0.0" y="34" width="97" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Quick Relief"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls9-6g-hv9">
+                                        <rect key="frame" x="0.0" y="68" width="97" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Report"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFo-wB-XNi">
+                                        <rect key="frame" x="0.0" y="102" width="97" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="1qY-Nd-7e9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92633889849999995" green="0.84275913650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kE-ws-Pc9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-Uj-g1u">
-                                <rect key="frame" x="320" y="34" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="93F-Eu-aQV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-gl-xbR">
-                                <rect key="frame" x="22" y="34" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back button" image="backButton"/>
-                                <connections>
-                                    <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="Gaz-F1-l7K"/>
-                                    <segue destination="9g5-Tp-LrT" kind="show" id="UgZ-8e-nAK"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-gl-xbR">
+                                        <rect key="frame" x="22" y="34" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="isc-Rp-ELr"/>
+                                            <constraint firstAttribute="width" constant="25" id="k4D-PW-hhe"/>
+                                        </constraints>
+                                        <state key="normal" title="back button" image="backButton"/>
+                                        <connections>
+                                            <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="Gaz-F1-l7K"/>
+                                            <segue destination="9g5-Tp-LrT" kind="show" id="UgZ-8e-nAK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-Uj-g1u">
+                                        <rect key="frame" x="320" y="34" width="25" height="25"/>
+                                        <state key="normal" image="hamburger"/>
+                                        <connections>
+                                            <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="93F-Eu-aQV"/>
+                                            <action selector="hamburgerBtnTapped:" destination="gkx-DL-mgx" eventType="touchUpInside" id="Rac-WC-RaI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-mQ-gJS">
+                                        <rect key="frame" x="192" y="326" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Loving ">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="uplift:" destination="gkx-DL-mgx" eventType="touchUpInside" id="Tou-SG-z0X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRN-b9-i6z">
+                                        <rect key="frame" x="192" y="425" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="5" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Meditation ">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="meditate:" destination="gkx-DL-mgx" eventType="touchUpInside" id="le1-7r-zFl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Isb-g2-vez">
+                                        <rect key="frame" x="34" y="326" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="HF7-Ya-Tud"/>
+                                            <constraint firstAttribute="width" constant="141" id="hbw-9h-T8V"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Happy ">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="happy:" destination="gkx-DL-mgx" eventType="touchUpInside" id="DzQ-ZQ-Lbs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-2k-7WB">
+                                        <rect key="frame" x="34" y="425" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="omc-VZ-0Po"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="4" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Relaxing ">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="8TZ-F0-U0R"/>
+                                            <segue destination="e21-tQ-8aG" kind="show" identifier="segueMusic" id="agh-bU-qMp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-Xr-Pl2">
+                                        <rect key="frame" x="16" y="89" width="343" height="103"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Text talking about choosing relief">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="Papyrus"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyI-I9-3m4">
+                                        <rect key="frame" x="34" y="523" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="b3F-ml-z1v"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="4" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Party">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="Z9o-pa-kSL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g11-70-yoY">
+                                        <rect key="frame" x="192" y="523" width="141" height="82"/>
+                                        <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="4" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Focus">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="Papyrus"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="relax:" destination="gkx-DL-mgx" eventType="touchUpInside" id="QP3-jb-7bd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose a playlist option below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfZ-kA-Vdi">
+                                        <rect key="frame" x="16" y="280" width="343" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="bc9-sA-hLq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="leading" secondItem="gaV-2k-7WB" secondAttribute="leading" id="0ED-Dp-8iW"/>
+                                    <constraint firstItem="GfZ-kA-Vdi" firstAttribute="top" secondItem="MTH-Xr-Pl2" secondAttribute="bottom" constant="88" id="0Ua-qI-Ppx"/>
+                                    <constraint firstItem="d1g-mQ-gJS" firstAttribute="leading" secondItem="Isb-g2-vez" secondAttribute="trailing" constant="17" id="1Y3-qn-ZUW"/>
+                                    <constraint firstItem="qmW-gl-xbR" firstAttribute="top" secondItem="2qw-Uj-g1u" secondAttribute="top" id="22D-AV-f0C"/>
+                                    <constraint firstItem="gaV-2k-7WB" firstAttribute="leading" secondItem="fyI-I9-3m4" secondAttribute="leading" id="3FR-tX-RNa"/>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="baseline" secondItem="d1g-mQ-gJS" secondAttribute="firstBaseline" id="5fc-l7-61D"/>
+                                    <constraint firstItem="qmW-gl-xbR" firstAttribute="top" secondItem="7kE-ws-Pc9" secondAttribute="top" constant="34" id="6LZ-Zt-aA5"/>
+                                    <constraint firstItem="gaV-2k-7WB" firstAttribute="top" secondItem="WRN-b9-i6z" secondAttribute="top" id="7sV-SP-fRV"/>
+                                    <constraint firstItem="MTH-Xr-Pl2" firstAttribute="leading" secondItem="7kE-ws-Pc9" secondAttribute="leading" constant="16" id="9V0-T4-lfY"/>
+                                    <constraint firstItem="fyI-I9-3m4" firstAttribute="baseline" secondItem="g11-70-yoY" secondAttribute="firstBaseline" id="Bga-6z-UKE"/>
+                                    <constraint firstItem="MTH-Xr-Pl2" firstAttribute="leading" secondItem="GfZ-kA-Vdi" secondAttribute="leading" id="CGn-ns-CHy"/>
+                                    <constraint firstAttribute="trailing" secondItem="2qw-Uj-g1u" secondAttribute="trailing" constant="30" id="DQy-QO-O4U"/>
+                                    <constraint firstItem="WRN-b9-i6z" firstAttribute="leading" secondItem="g11-70-yoY" secondAttribute="leading" id="KKi-zM-Bng"/>
+                                    <constraint firstItem="gaV-2k-7WB" firstAttribute="trailing" secondItem="fyI-I9-3m4" secondAttribute="trailing" id="LHK-tJ-mf0"/>
+                                    <constraint firstItem="MTH-Xr-Pl2" firstAttribute="top" secondItem="qmW-gl-xbR" secondAttribute="bottom" constant="30" id="Md6-2G-lzX"/>
+                                    <constraint firstAttribute="trailing" secondItem="d1g-mQ-gJS" secondAttribute="trailing" constant="42" id="QCI-ZP-jpG"/>
+                                    <constraint firstItem="d1g-mQ-gJS" firstAttribute="leading" secondItem="WRN-b9-i6z" secondAttribute="leading" id="RRH-Qc-1ks"/>
+                                    <constraint firstItem="gaV-2k-7WB" firstAttribute="baseline" secondItem="WRN-b9-i6z" secondAttribute="firstBaseline" id="Tvn-N5-HgH"/>
+                                    <constraint firstItem="qmW-gl-xbR" firstAttribute="leading" secondItem="7kE-ws-Pc9" secondAttribute="leading" constant="22" id="V0c-SI-pSh"/>
+                                    <constraint firstItem="gaV-2k-7WB" firstAttribute="top" secondItem="Isb-g2-vez" secondAttribute="bottom" constant="17" id="WaS-M4-Tp6"/>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="top" secondItem="GfZ-kA-Vdi" secondAttribute="bottom" constant="25" id="bs0-Hf-rZy"/>
+                                    <constraint firstItem="d1g-mQ-gJS" firstAttribute="trailing" secondItem="WRN-b9-i6z" secondAttribute="trailing" id="d2m-0q-SYl"/>
+                                    <constraint firstAttribute="bottom" secondItem="fyI-I9-3m4" secondAttribute="bottom" constant="62" id="hNU-fY-XGO"/>
+                                    <constraint firstItem="MTH-Xr-Pl2" firstAttribute="centerX" secondItem="7kE-ws-Pc9" secondAttribute="centerX" id="iFT-Li-tTS"/>
+                                    <constraint firstItem="MTH-Xr-Pl2" firstAttribute="trailing" secondItem="GfZ-kA-Vdi" secondAttribute="trailing" id="mmS-Ww-LDp"/>
+                                    <constraint firstItem="fyI-I9-3m4" firstAttribute="top" secondItem="gaV-2k-7WB" secondAttribute="bottom" constant="16" id="mpl-Gs-pMB"/>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="trailing" secondItem="gaV-2k-7WB" secondAttribute="trailing" id="pL9-5f-bUm"/>
+                                    <constraint firstItem="WRN-b9-i6z" firstAttribute="trailing" secondItem="g11-70-yoY" secondAttribute="trailing" id="rIU-bS-iaI"/>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="leading" secondItem="7kE-ws-Pc9" secondAttribute="leading" constant="34" id="rTP-ga-Idg"/>
+                                    <constraint firstItem="Isb-g2-vez" firstAttribute="top" secondItem="d1g-mQ-gJS" secondAttribute="top" id="ulv-pq-GAy"/>
+                                    <constraint firstItem="fyI-I9-3m4" firstAttribute="top" secondItem="g11-70-yoY" secondAttribute="top" id="vgD-BI-tPy"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.42693414740000002" blue="0.96562635799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MEP-xa-8fX" secondAttribute="bottom" constant="20" symbolic="YES" id="C2J-GF-HFG"/>
+                            <constraint firstAttribute="trailing" secondItem="7kE-ws-Pc9" secondAttribute="trailing" id="Fa9-Ol-yuC"/>
+                            <constraint firstItem="MEP-xa-8fX" firstAttribute="leading" secondItem="Wzu-qa-s6a" secondAttribute="leading" constant="78" id="Y8s-cx-p0r"/>
+                            <constraint firstItem="7kE-ws-Pc9" firstAttribute="leading" secondItem="3FU-zS-esv" secondAttribute="leading" id="a0q-WN-8Py"/>
+                            <constraint firstItem="Pp7-sg-1vq" firstAttribute="top" secondItem="Wzu-qa-s6a" secondAttribute="top" constant="42" id="gLN-jz-GdQ"/>
+                            <constraint firstItem="Wzu-qa-s6a" firstAttribute="trailing" secondItem="MEP-xa-8fX" secondAttribute="trailing" constant="146" id="ikj-HG-fZp"/>
+                            <constraint firstItem="Pp7-sg-1vq" firstAttribute="leading" secondItem="Wzu-qa-s6a" secondAttribute="leading" constant="246" id="m09-JS-4ZZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wzu-qa-s6a"/>
                     </view>
+                    <connections>
+                        <outlet property="leading" destination="a0q-WN-8Py" id="R3Q-6s-S0z"/>
+                        <outlet property="trailing" destination="Fa9-Ol-yuC" id="rsA-L4-BFu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjv-vm-MS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4070" y="91"/>
+            <point key="canvasLocation" x="4069.5999999999999" y="90.404797601199405"/>
         </scene>
         <!--View Controller Music-->
         <scene sceneID="yE3-5l-kSx">
@@ -793,8 +920,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RB2-3l-05q"/>
-        <segue reference="pGQ-gI-XZS"/>
+        <segue reference="UgZ-8e-nAK"/>
         <segue reference="uhL-e0-4rv"/>
-        <segue reference="qJ3-HV-mem"/>
+        <segue reference="p9j-1t-Cwn"/>
     </inferredMetricsTieBreakers>
 </document>

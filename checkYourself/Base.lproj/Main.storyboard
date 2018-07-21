@@ -417,6 +417,10 @@
                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fzZ-IL-LwB"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kisspng-picture-frame-sketch-creative-hand-painted-picture-frame-material-retro-5a6c15d620f950.1311524415170329181351" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-AA-aMW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-hD-s1I">
                                         <rect key="frame" x="8" y="123" width="359" height="56"/>
                                         <constraints>
@@ -466,7 +470,9 @@
                         <viewLayoutGuide key="safeArea" id="6wo-rf-1ZR"/>
                     </view>
                     <connections>
+                        <outlet property="btnRelief" destination="vNT-Mo-ODj" id="PYf-YG-x1B"/>
                         <outlet property="btnSulk" destination="Lhb-wc-5gB" id="hb2-wg-DTQ"/>
+                        <outlet property="checkedEmotion" destination="EpH-hD-s1I" id="pcL-LB-hzZ"/>
                         <outlet property="leading" destination="Cjv-Jv-a1S" id="ycs-N5-Bc1"/>
                         <outlet property="trailing" destination="FyW-Tk-UVt" id="QtD-ac-cJt"/>
                     </connections>

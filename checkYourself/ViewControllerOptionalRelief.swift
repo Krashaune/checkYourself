@@ -10,14 +10,15 @@ import UIKit
 import SpotifyLogin
 
 class ViewControllerOptionalRelief: UIViewController {
-
+   
+    var checkedInEmotion:String = ""
     @IBOutlet weak var checkedEmotion: UILabel!
 
     @IBOutlet weak var btnRelief: UIButton!
     
     @IBOutlet weak var btnSulk: UIButton!
     
-    var checkedInEmotion = ""
+   
     var hamburgerMenuIsVisible = false
     
     @IBOutlet weak var leading: NSLayoutConstraint!
@@ -40,25 +41,23 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.updateLabelText()
-        }
+        print(checkedInEmotion)
         
+        self.checkedEmotion.text = self.checkedInEmotion
         
+    
 //        btnRelief.layer.cornerRadius = 10
 //        btnSulk.layer.cornerRadius = 10
         
         // Do any additional setup after loading the view.
     }
     
-    func updateLabelText() {
-         checkedEmotion.text = ("You checked in as \(self.checkedInEmotion)")
-        
-    }
     override func viewDidAppear(_ animated: Bool)
     {
-        
-        
+        DispatchQueue.main.async {
+            
+        }
+      
     }
     
     

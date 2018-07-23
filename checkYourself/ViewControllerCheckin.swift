@@ -55,19 +55,27 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
         print ("index \(indexPath.item)")
         print ("emotion \(emotions[indexPath.item])")
         emotionReport.append(emotions[indexPath.item])
-        self.currentEmotion = emotions[indexPath.item]
+        self.currentEmotion.append(emotions[indexPath.item])
         print(currentEmotion)
 //        print(emotionReport)
         
+        func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
+            if segue.destination is ViewControllerOptionalRelief {
+                let vc = segue.destination as? ViewControllerOptionalRelief
+                
+                vc?.checkedInEmotion = currentEmotion
+            }
+        }
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewControllerOptionalRelief {
-            let vc = segue.destination as! ViewControllerOptionalRelief
-            
-            vc.checkedInEmotion = self.currentEmotion
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
+//        if segue.destination is ViewControllerOptionalRelief {
+//            let vc = segue.destination as? ViewControllerOptionalRelief
+//
+//            vc?.checkedInEmotion = currentEmotion
+//        }
+//    }
    
 
     override func viewDidLoad() {

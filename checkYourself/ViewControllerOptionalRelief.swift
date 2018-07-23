@@ -42,7 +42,9 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("about to print checked in emotion")
         print(checkedInEmotion)
+        print("after checked in emotion is printed")
         checkedEmotion.text = checkedInEmotion
         
 //        btnRelief.layer.cornerRadius = 10
@@ -54,15 +56,6 @@ class ViewControllerOptionalRelief: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
        
-        
-//        print("about to print checked in emotion")
-//        print(checkedInEmotion)
-//        print("after checked in emotion is printed")
-//
-//
-//        DispatchQueue.main.async {
-//
-//        }
       
     }
     

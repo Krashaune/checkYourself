@@ -51,22 +51,32 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        print("user has clicked an emotion button")
-        print ("index \(indexPath.item)")
-        print ("emotion \(emotions[indexPath.item])")
+//        print("user has clicked an emotion button")
+//        print ("index \(indexPath.item)")
+//        print ("emotion \(emotions[indexPath.item])")
         emotionReport.append(emotions[indexPath.item])
-        self.currentEmotion.append(emotions[indexPath.item])
+        self.currentEmotion = emotions[indexPath.item]
         print(currentEmotion)
 //        print(emotionReport)
         
-        func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
-            if segue.destination is ViewControllerOptionalRelief {
-                let vc = segue.destination as? ViewControllerOptionalRelief
-                
-                vc?.checkedInEmotion = currentEmotion
-            }
-        }
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
         
+        dateFormatter.dateStyle = .full
+        
+        dateFormatter.timeStyle = .medium
+        
+        let dateString = dateFormatter.string(from: Date())
+        print(dateString)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
+        if segue.destination is ViewControllerOptionalRelief {
+            let vc = segue.destination as? ViewControllerOptionalRelief
+            
+            vc?.checkedInEmotion = currentEmotion
+        }
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {

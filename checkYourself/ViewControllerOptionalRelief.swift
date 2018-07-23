@@ -11,7 +11,8 @@ import SpotifyLogin
 
 class ViewControllerOptionalRelief: UIViewController {
    
-    var checkedInEmotion:String = ""
+    var checkedInEmotion = ""
+    
     @IBOutlet weak var checkedEmotion: UILabel!
 
     @IBOutlet weak var btnRelief: UIButton!
@@ -41,10 +42,8 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(checkedInEmotion)
         
-        self.checkedEmotion.text = self.checkedInEmotion
-        
+        checkedEmotion.text = checkedInEmotion
     
 //        btnRelief.layer.cornerRadius = 10
 //        btnSulk.layer.cornerRadius = 10
@@ -54,9 +53,16 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        DispatchQueue.main.async {
-            
-        }
+       
+        
+//        print("about to print checked in emotion")
+//        print(checkedInEmotion)
+//        print("after checked in emotion is printed")
+//
+//
+//        DispatchQueue.main.async {
+//
+//        }
       
     }
     

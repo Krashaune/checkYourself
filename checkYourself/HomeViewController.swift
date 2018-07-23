@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
-        name.text = "Hey There!"
+        name.text = username
     }
 
     override func didReceiveMemoryWarning() {

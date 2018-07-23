@@ -95,6 +95,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-bD-LoW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-i7-QYx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-DX-j5K">
                                         <rect key="frame" x="102" y="508" width="170" height="83"/>
                                         <color key="backgroundColor" red="0.97832212190000001" green="1" blue="0.32387407940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -117,15 +121,16 @@
                                             <segue destination="cEJ-JD-HIg" kind="show" identifier="QuickCheckin" id="EIR-VW-wBt"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAn-NF-oOe">
-                                        <rect key="frame" x="43" y="301" width="295" height="64"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAn-NF-oOe">
+                                        <rect key="frame" x="43" y="301" width="295" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="This app will help you check in with yourself when others tend to forget.">
+                                            <fragment content="You are in the right place if you need help to regularly check in with yourself and find relief through music.">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="15" name="Optima-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops/>
                                                     </paragraphStyle>
@@ -151,12 +156,12 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-za-5Hf">
-                                        <rect key="frame" x="43" y="173" width="295" height="97"/>
+                                        <rect key="frame" x="43" y="77" width="295" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Welcome to CheckYourself! ">
                                                 <attributes>
-                                                    <font key="NSFont" size="27" name="Papyrus"/>
+                                                    <font key="NSFont" size="39" name="Papyrus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -176,7 +181,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzF-4x-9cj">
-                                        <rect key="frame" x="16" y="82" width="343" height="53"/>
+                                        <rect key="frame" x="113" y="215" width="159" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
@@ -189,7 +194,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90446622099999996" green="0.91991003380000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="nfK-DX-j5K" firstAttribute="centerX" secondItem="KUg-bD-LoW" secondAttribute="centerX" id="Br4-YH-5gq"/>
                                     <constraint firstItem="nfK-DX-j5K" firstAttribute="leading" secondItem="KUg-bD-LoW" secondAttribute="leading" constant="102" id="Kjg-o0-v8d"/>
@@ -226,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoH-UN-6Gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="-612"/>
+            <point key="canvasLocation" x="-442.39999999999998" y="-612.14392803598207"/>
         </scene>
         <!--View Controller Checkin-->
         <scene sceneID="reJ-tb-hCt">
@@ -952,9 +957,9 @@
         <image name="silhouette" width="697" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4Q-ie-NcG"/>
+        <segue reference="RB2-3l-05q"/>
         <segue reference="UgZ-8e-nAK"/>
-        <segue reference="uhL-e0-4rv"/>
-        <segue reference="p9j-1t-Cwn"/>
+        <segue reference="xhD-tz-x93"/>
+        <segue reference="qJ3-HV-mem"/>
     </inferredMetricsTieBreakers>
 </document>

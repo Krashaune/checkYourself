@@ -320,22 +320,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-dd-PEh">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Check In"/>
+                                        <state key="normal" title="Check In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpE-r0-Jrb">
                                         <rect key="frame" x="0.0" y="34" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Quick Relief"/>
+                                        <state key="normal" title="Quick Relief">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rf-nc-Aeg">
                                         <rect key="frame" x="0.0" y="68" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Report"/>
+                                        <state key="normal" title="Report">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-v2-EQA">
                                         <rect key="frame" x="0.0" y="102" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Log Out"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="8wA-e1-Q7v"/>
                                         </connections>
@@ -388,6 +396,21 @@
                                             <segue destination="m68-tC-HL3" kind="show" id="E4d-oG-YfJ"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-hD-s1I">
+                                        <rect key="frame" x="8" y="123" width="359" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="jps-pN-7RK"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="Papyrus"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nX-8h-edM">
                                         <rect key="frame" x="16" y="228" width="343" height="73"/>
                                         <constraints>
@@ -422,21 +445,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-hD-s1I">
-                                        <rect key="frame" x="8" y="123" width="359" height="56"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="jps-pN-7RK"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <font key="NSFont" size="18" name="Papyrus"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-Hc-KHF">
+                                        <rect key="frame" x="45" y="0.0" width="314" height="393"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -480,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HO7-y0-UXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4926" y="-896"/>
+            <point key="canvasLocation" x="4925.6000000000004" y="-896.40179910044981"/>
         </scene>
         <!--View Controller Wellness-->
         <scene sceneID="lsm-HB-ekz">
@@ -502,22 +514,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-iu-s4o">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Check In"/>
+                                        <state key="normal" title="Check In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-3b-JuU">
                                         <rect key="frame" x="0.0" y="34" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Quick Relief"/>
+                                        <state key="normal" title="Quick Relief">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls9-6g-hv9">
                                         <rect key="frame" x="0.0" y="68" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Report"/>
+                                        <state key="normal" title="Report">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFo-wB-XNi">
                                         <rect key="frame" x="0.0" y="102" width="97" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Log Out"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="1qY-Nd-7e9"/>
                                         </connections>
@@ -528,6 +548,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kE-ws-Pc9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colorSmoke" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-TP-BtX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-gl-xbR">
                                         <rect key="frame" x="22" y="34" width="25" height="25"/>
                                         <constraints>
@@ -804,8 +828,8 @@
                                     <action selector="playPlaylist:" destination="e21-tQ-8aG" eventType="touchUpInside" id="rAH-Yh-kqN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headphoneSketch" translatesAutoresizingMaskIntoConstraints="NO" id="nlA-qg-kTV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="297"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headphoneSketch" translatesAutoresizingMaskIntoConstraints="NO" id="nlA-qg-kTV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH1-hG-4SI">
@@ -884,14 +908,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEb-zt-bfP">
-                                <rect key="frame" x="22" y="34" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="U5b-Zs-p4h"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kisspng-picture-frame-sketch-creative-hand-painted-picture-frame-material-retro-5a6c15d620f950.1311524415170329181351" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-yf-req">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -906,6 +922,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-7J-ShT">
+                                <rect key="frame" x="22" y="34" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="hamburgerBtnTapped:" destination="w9X-oK-MTn" eventType="touchUpInside" id="dQd-TC-4bJ"/>
+                                    <segue destination="9g5-Tp-LrT" kind="show" id="82y-4l-7iC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92633889849999995" green="0.84275913650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="AJO-R7-p6S"/>
@@ -918,16 +943,18 @@
     </scenes>
     <resources>
         <image name="backButton" width="100" height="100"/>
+        <image name="colorSmoke" width="640" height="1136"/>
         <image name="featherSketch" width="2421" height="1464"/>
         <image name="hamburger" width="25" height="25"/>
         <image name="headphoneSketch" width="3045" height="3285"/>
         <image name="kisspng-picture-frame-sketch-creative-hand-painted-picture-frame-material-retro-5a6c15d620f950.1311524415170329181351" width="3600" height="3600"/>
         <image name="logoImage" width="191" height="247"/>
+        <image name="silhouette" width="697" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RB2-3l-05q"/>
+        <segue reference="g4Q-ie-NcG"/>
         <segue reference="UgZ-8e-nAK"/>
-        <segue reference="EIR-VW-wBt"/>
-        <segue reference="qJ3-HV-mem"/>
+        <segue reference="uhL-e0-4rv"/>
+        <segue reference="p9j-1t-Cwn"/>
     </inferredMetricsTieBreakers>
 </document>

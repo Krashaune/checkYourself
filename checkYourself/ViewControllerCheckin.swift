@@ -54,8 +54,10 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
 //        print("user has clicked an emotion button")
 //        print ("index \(indexPath.item)")
 //        print ("emotion \(emotions[indexPath.item])")
+        
         emotionReport.append(emotions[indexPath.item])
-        self.currentEmotion = emotions[indexPath.item]
+        currentEmotion = emotions[indexPath.item]
+        
         print(currentEmotion)
 //        print(emotionReport)
         
@@ -64,7 +66,7 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
         
         dateFormatter.dateStyle = .full
         
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         
         let dateString = dateFormatter.string(from: Date())
         print(dateString)

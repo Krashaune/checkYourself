@@ -42,9 +42,9 @@ class ViewControllerOptionalRelief: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(checkedInEmotion)
         checkedEmotion.text = checkedInEmotion
-    
+        
 //        btnRelief.layer.cornerRadius = 10
 //        btnSulk.layer.cornerRadius = 10
         

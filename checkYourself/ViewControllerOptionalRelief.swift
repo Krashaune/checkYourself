@@ -11,7 +11,7 @@ import SpotifyLogin
 
 class ViewControllerOptionalRelief: UIViewController {
    
-    var checkedInEmotion = ""
+    var checkedInEmotion: String?
     
     @IBOutlet weak var checkedEmotion: UILabel!
 
@@ -45,7 +45,7 @@ class ViewControllerOptionalRelief: UIViewController {
         print("about to print checked in emotion")
         print(checkedInEmotion)
         print("after checked in emotion is printed")
-        checkedEmotion.text = checkedInEmotion
+//        checkedEmotion.text = checkedInEmotion
         
 //        btnRelief.layer.cornerRadius = 10
 //        btnSulk.layer.cornerRadius = 10

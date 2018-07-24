@@ -58,36 +58,28 @@ class ViewControllerCheckin: UIViewController, UICollectionViewDataSource, UICol
         emotionReport.append(emotions[indexPath.item])
         currentEmotion = emotions[indexPath.item]
         
-        print(currentEmotion)
+        
 //        print(emotionReport)
         
         let currentDate = Date()
         let dateFormatter = DateFormatter()
-        
         dateFormatter.dateStyle = .full
-        
         dateFormatter.timeStyle = .short
-        
         let dateString = dateFormatter.string(from: Date())
+        
+        print(currentEmotion)
         print(dateString)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
-        if segue.destination is ViewControllerOptionalRelief {
-            let vc = segue.destination as? ViewControllerOptionalRelief
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let checkedInEmotion = String()
+        if let destinationViewController = segue.destination as? ViewControllerOptionalRelief  {
             
-            vc?.checkedInEmotion = currentEmotion
+           destinationViewController.checkedInEmotion = currentEmotion
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
-//        if segue.destination is ViewControllerOptionalRelief {
-//            let vc = segue.destination as? ViewControllerOptionalRelief
-//
-//            vc?.checkedInEmotion = currentEmotion
-//        }
-//    }
    
 
     override func viewDidLoad() {

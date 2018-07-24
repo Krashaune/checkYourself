@@ -406,14 +406,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="jps-pN-7RK"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <font key="NSFont" size="18" name="Papyrus"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <attributedString key="attributedText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nX-8h-edM">
@@ -942,7 +935,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g4Q-ie-NcG"/>
-        <segue reference="qDe-6l-hXl"/>
+        <segue reference="pGQ-gI-XZS"/>
         <segue reference="uhL-e0-4rv"/>
         <segue reference="qJ3-HV-mem"/>
     </inferredMetricsTieBreakers>

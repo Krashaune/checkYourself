@@ -27,7 +27,7 @@ class ViewControllerSulk: UIViewController, UIScrollViewDelegate {
         
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: "musicnoteDoodle")
+        slide3.imageView.image = UIImage(named: "feather")
         slide3.textView.text = "A real-life bear"
         
         

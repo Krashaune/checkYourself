@@ -8,14 +8,58 @@
 
 import UIKit
 
-class ViewControllerSulk: UIViewController {
+class ViewControllerSulk: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    func createSlides() -> [Slide] {
+        
+        let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide1.imageView.image = UIImage(named: "ic_onboarding_1")
+        slide1.textView.text = "A real-life bear"
+        
+        
+        let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide2.imageView.image = UIImage(named: "ic_onboarding_2")
+        slide2.textView.text = "A real-life bear"
+        
+        
+        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide3.imageView.image = UIImage(named: "ic_onboarding_3")
+        slide3.textView.text = "A real-life bear"
+        
+        
+        return [slide1, slide2, slide3]
+    }
+    
+    func setupSlideScrollView(slides : [Slide]) {
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+        scrollView.isPagingEnabled = true
+        
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            scrollView.addSubview(slides[i])
+        }
+    }
+    
+    var slides:[Slide] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scrollView.delegate = self
+        
+        slides = createSlides()
+        setupSlideScrollView(slides: slides)
+        
+        pageControl.numberOfPages = slides.count
+        pageControl.currentPage = 0
+        
+        view.bringSubview(toFront: pageControl)
+        
         // Do any additional setup after loading the view.
     }
 

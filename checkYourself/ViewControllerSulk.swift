@@ -17,17 +17,17 @@ class ViewControllerSulk: UIViewController, UIScrollViewDelegate {
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide1.imageView.image = UIImage(named: "ic_onboarding_1")
+        slide1.imageView.image = UIImage(named: "redSun")
         slide1.textView.text = "A real-life bear"
         
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide2.imageView.image = UIImage(named: "ic_onboarding_2")
+        slide2.imageView.image = UIImage(named: "blueflowers")
         slide2.textView.text = "A real-life bear"
         
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: "ic_onboarding_3")
+        slide3.imageView.image = UIImage(named: "musicnoteDoodle")
         slide3.textView.text = "A real-life bear"
         
         

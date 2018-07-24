@@ -10,6 +10,9 @@ import UIKit
 
 class ViewControllerSulk: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

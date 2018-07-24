@@ -17,34 +17,18 @@ class ViewControllerSulk: UIViewController, UIScrollViewDelegate {
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-
-//        image view
-        let img1 = UIImage(named: "redSun")
-        slide1.imageView.image = img1
-//        slide1.imageView.alpha = 0.8
-
-//        text view
-//        let texttextLabel = slide1.texttextLabel(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
-//        slide1.textLabel.backgroundColor = UIColor.lightGray
-//        slide1.textLabel.alpha = 1
-
-//        slide1.textLabel.font = UIFont.systemFont(ofSize: 24)
-//        slide1.textLabel.font = UIFont(name: "Papyrus", size: 24)
-//        UIColor(displayP3Red: 114, green: 109, blue: 109, alpha: 1)
-        
+        slide1.imageView.image = UIImage(named: "redSun")
         slide1.textLabel.text = "Make a commitment that today you will not worry about anything. You will allow life to flow without expectation or judgement."
         
         
-    
-        
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "blueflowers")
-        slide2.textLabel.text = "A real-life bear"
+        slide2.textLabel.text = "Relax. You are not a finished product. Give yourself sometime to grow into yourself."
         
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: "feather")
-        slide3.textLabel.text = "A real-life bear"
+        slide3.imageView.image = UIImage(named: "featherWater")
+        slide3.textLabel.text = "No such things as a life thats better than yours"
         
         
         return [slide1, slide2, slide3]

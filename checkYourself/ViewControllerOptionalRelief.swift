@@ -39,6 +39,10 @@ class ViewControllerOptionalRelief: UIViewController {
         }
         
     }
+    @IBAction func logout(_ sender: UIButton) {
+        SpotifyLogin.shared.logout()
+        performSegue(withIdentifier: "spotifyLogout", sender: UIButton.self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

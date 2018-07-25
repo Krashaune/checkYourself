@@ -351,6 +351,8 @@
                                         </state>
                                         <connections>
                                             <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="8wA-e1-Q7v"/>
+                                            <action selector="logout:" destination="9g5-Tp-LrT" eventType="touchUpInside" id="vG4-XW-T9Q"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogout" id="ndD-yK-KLf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -538,7 +540,9 @@
                                         </state>
                                         <connections>
                                             <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="1qY-Nd-7e9"/>
+                                            <action selector="logout:" destination="gkx-DL-mgx" eventType="touchUpInside" id="kUu-uF-UFC"/>
                                             <action selector="logout:" destination="FHA-N5-W7N" eventType="touchUpInside" id="m3a-QO-JbR"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="spotifyLogout" id="Een-eT-c1N"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -952,9 +956,9 @@
         <image name="silhouette" width="697" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4Q-ie-NcG"/>
+        <segue reference="BSr-kb-Ik7"/>
         <segue reference="UgZ-8e-nAK"/>
         <segue reference="uhL-e0-4rv"/>
-        <segue reference="p9j-1t-Cwn"/>
+        <segue reference="Een-eT-c1N"/>
     </inferredMetricsTieBreakers>
 </document>

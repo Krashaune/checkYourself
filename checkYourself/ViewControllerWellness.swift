@@ -71,6 +71,10 @@ class ViewControllerWellness: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: UIButton) {
+        SpotifyLogin.shared.logout()
+        performSegue(withIdentifier: "spotifyLogout", sender: UIButton.self)
+    }
     
     /*
     // MARK: - Navigation

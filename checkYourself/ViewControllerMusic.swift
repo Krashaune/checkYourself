@@ -34,14 +34,6 @@ class ViewControllerMusic: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var playlistImage: UIImageView!
     
     
-    @IBAction func logout(_ sender: UIButton) {
-        SpotifyLogin.shared.logout()
-        performSegue(withIdentifier: "spotifyLogout", sender: UIButton.self)
-    }
-    @IBAction func didTapLogOut(_ sender: UIButton) {
-        SpotifyLogin.shared.logout()
-        performSegue(withIdentifier: "spotifyLogout", sender: UIButton.self)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

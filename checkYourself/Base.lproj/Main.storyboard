@@ -538,6 +538,7 @@
                                         </state>
                                         <connections>
                                             <action selector="didTapLogOut:" destination="w9X-oK-MTn" eventType="touchUpInside" id="1qY-Nd-7e9"/>
+                                            <action selector="logout:" destination="FHA-N5-W7N" eventType="touchUpInside" id="m3a-QO-JbR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -773,6 +774,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjv-vm-MS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FHA-N5-W7N" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2136.8000000000002" y="179.46026986506749"/>
         </scene>
@@ -951,8 +953,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g4Q-ie-NcG"/>
-        <segue reference="pGQ-gI-XZS"/>
+        <segue reference="UgZ-8e-nAK"/>
         <segue reference="uhL-e0-4rv"/>
-        <segue reference="qJ3-HV-mem"/>
+        <segue reference="p9j-1t-Cwn"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,16 +19,20 @@ class ViewControllerSulk: UIViewController, UIScrollViewDelegate {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageView.image = UIImage(named: "redSun")
         slide1.textLabel.text = "Make a commitment that today you will not worry about anything. You will allow life to flow without expectation or judgement."
+        slide1.textLabel.textColor = .black
+        
         
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "blueflowers")
         slide2.textLabel.text = "Relax. You are not a finished product. Give yourself sometime to grow into yourself."
+        slide2.textLabel.textColor = .black
         
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageView.image = UIImage(named: "featherWater")
-        slide3.textLabel.text = "No such things as a life thats better than yours"
+        slide3.textLabel.text = "No such thing as a life thats better than yours. No such thing, no such thing           -J.Cole"
+        slide3.textLabel.textColor = .black
         
         
         return [slide1, slide2, slide3]

@@ -27,7 +27,7 @@
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
-                                <font key="NSFont" size="22" name="Papyrus"/>
+                                <font key="NSFont" size="30" name="Papyrus"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
